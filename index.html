@@ -1,0 +1,843 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik+Moonrocks&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cabin+Sketch&family=Rubik+Moonrocks&display=swap" rel="stylesheet">
+    <title>Eindopdracht</title>
+</head>
+
+<body>
+
+    <div id="container">
+
+        <!-- enter game -->
+        <section id="section1">
+            <img src="img/6_generated.jpg" alt="" width="660">
+            <div class="button">START</div>
+        </section>
+
+        <!-- instructions game -->
+        <section id="section2" class="disappeared">
+
+            <img src="img/Asset 1@2x.jpeg" width="660">
+            <h1>The Room</h1>
+            <br><br><br>
+            <h2>The room you are in is locked. The key is somewhere in the room. Find the key so you can open the door. Look for clues to find the key.</h2>
+            <div class="arrow">
+                <img src="img/arrow.png" alt="arrow" width="60px">
+            </div>
+
+        </section>
+
+        <!-- you are in the room -->
+        <section id="section3" class="disappeared">
+            <div class="room1" class="sections">
+                <img src="img/room5.png" alt="room" width="960px">
+                <div id=things>
+                    <h3>Play some computer games. These will give you the insights you need to find the key. Put your headphones on your ears, sit on the chair, put on the virtual reality glasses, put your hand on the mouse and click on the monitor screen.</h3>
+                    <img src="img/chair.png" alt="chair" class="chair">
+                    <img src="img/cds.png" alt="cds" class="cds">
+                    <img src="img/cup.png" alt="cup" class="cup">
+                    <img src="img/drawings.png" alt="drawings" class="drawings">
+                    <img src="img/headphones.png" alt="headphones" class="headphones">
+                    <img src="img/microphone.png" alt="microphone" class="mic">
+                    <img src="img/motivatieText.png" alt="text" class="motivationText">
+                    <img src="img/lamp.png" alt="lamp" class="lamp">
+                    <img src="img/posters.png" alt="poster" class="posters">
+                    <img src="img/trophy.png" alt="trophy" class="trophy">
+                    <img src="img/bookcase2.png" alt="" class="bookcase">
+                    <img src="img/pillow1.png" alt="" class="pillow1">
+                    <img src="img/pillow2.png" alt="" class="pillow2">
+                    <img src="img/books.png" alt="" class="books">
+                    <img src="img/frame.png" alt="" class="frame">
+                    <img src="img/mouse.png" alt="" class="mouse">
+                    <img src="img/videoGlasses.png" alt="virtual reality glasses" class="virtualRealityGlasses">
+                    <img src="img/speakers.png" alt="speakers" class="speakers">
+                    <img src="img/monitor.png" alt="monitor" class="monitor">
+                    <img src="img/monitor1.png" alt="monitor" class="monitor1">
+                </div>
+                <div id="inventory">
+                    <div class="inventory-item" data-tool="">
+                    </div>
+                    <div class="inventory-item" data-tool="">
+                    </div>
+                    <div class="inventory-item" data-tool="">
+                    </div>
+                    <div class="inventory-item" data-tool="">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- you are virtual in the computer -->
+        <section id="section4" class="disappeared">
+            <div class="room1" class="sections">
+                <img src="img/vecteezy_grid-room-in-perspective-vector-illustration-in-3d-style_6471587.jpg" alt="virtual reality room" width="960px" height="540px">
+                <div id="things">
+                    <h3 class="tip">Click on games icon.</h3>
+                    <img src="img/exit.png" alt="exit" class="exit">
+                    <img src="img/games.png" alt="" class="gamesFolder">
+                    <img src="img/folder.png" alt="" class="folder0">
+                    <img src="img/chat.png" alt="" class="chat0">
+                    <img src="img/battery.png" alt="" class="battery">
+
+                </div>
+            </div>
+        </section>
+
+        <!-- in the games folder -->
+        <section id="section5" class="disappeared">
+            <div class="room1" class="sections">
+                <img src="img/vecteezy_grid-room-in-perspective-vector-illustration-in-3d-style_6471587.jpg" alt="virtual reality room" width="960px" height="540px">
+                <div id="things">
+                    <h3 class="tip">Choose a game.</h3>
+                    <img src="img/window.png" alt="window" class="window">
+                    <div class="exitButton">X</div>
+                    <img src="img/Meerkat1.png" alt="game 1" class="game1">
+                    <p class="titleGame1">meerkats.exe</p>
+
+                    <img src="img/SearchGame.png" alt="game 2" class="game2">
+                    <p class="titleGame2">Search_Game.exe</p>
+                    <img src="img/battery.png" alt="" class="battery">
+                </div>
+            </div>
+
+        </section>
+
+        <!-- instructions for the first game -->
+        <section id="section6" class="disappeared">
+            <div class="room1" class="sections">
+                <img src="img/suricate.png" height="340">
+
+                <br>
+                <h2 class="firstGame">When you click on a meerkat, you get one point, two points, or five points, depending on the meerkat caught. It is up to you to find out which meerkat gives you the most points. If you manage to score at least 100 points in 1 minute, you
+                    win the game. If you run out of time, you lose. Good luck catching as many meerkats in as short time as possible!</h2>
+
+                <div class="enterGame1">START</div>
+
+            </div>
+
+        </section>
+
+        <!-- playing the first virtual game -->
+        <section id="section7" class="disappeared">
+            <div class="room1" class="sections">
+
+                <div id="things1">
+                    <img src="img/Desert.png" alt="desert" width="960px" height="540px">
+                    <h3 class="tip">Catch the meerkats!</h3>
+
+                    <img class="clouds" src="img/clouds.png" alt="">
+                    <img class="tree" src="img/tree.png" alt="tree">
+                    <div><img id="meerkat1" class="meerkat" data-punten="2" src="img/Meerkat1.png" alt="meerkat1"></div>
+                    <div><img id="meerkat2" class="meerkat" data-punten="2" src="img/Meerkat2.png" alt="meerkat2"></div>
+                    <div><img id="meerkat3" class="meerkat" data-punten="5" src="img/Meerkat3.png" alt="meerkat3"></div>
+                    <div><img id="meerkat4" class="meerkat" data-punten="5" src="img/Meerkat4.png" alt="meerkat4"></div>
+                    <div><img id="meerkat5" class="meerkat" data-punten="1" src="img/Meerkat5.png" alt="meerkat5"></div>
+
+                    <div><img id="meerkat8" class="meerkat" data-punten="2" src="img/Meerkat8.png" alt="meerkat8"></div>
+                    <div><img id="meerkat9" class="meerkat" data-punten="1" src="img/Meerkat9.png" alt="meerkat9"></div>
+                    <div><img src="img/Asset 3.png" alt="" id="hideout1"></div>
+                    <div><img src="img/Asset 4.png" alt="" id="hideout2"></div>
+                    <div><img src="img/Asset 5.png" alt="" id="hideout3"></div>
+
+                    <div><img id="meerkat6" class="meerkat" data-punten="5" src="img/Meerkat6.png" alt="meerkat6"></div>
+                    <div><img id="meerkat7" class="meerkat" data-punten="1" src="img/Meerkat7.png" alt="meerkat7"></div>
+
+
+                    <h1 id="klok"></h1>
+                    <div id="messageText"></div>
+                    <div id="counter-display">0</div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- lose the game -->
+        <section id="section7-1" class="disappeared">
+            <div class="room1" class="sections">
+                <img src="img/game_over.png" width="400">
+
+                <h2 class="firstGame1">You only accumulated + count + points. You lose.</h2>
+                <div class="panels-1">
+                    <div class="panel1">
+                        <img src="img/panou1.png" alt="panel" width="180">
+                    </div>
+                    <div class="panel2">
+                        <img src="img/panou2.png" alt="panel" width="220">
+                    </div>
+                    <h4 class="tryAgain">Try Again</h4>
+                    <h4 class="leaveGameLost">Leave The Game</h4>
+                </div>
+            </div>
+        </section>
+
+        <!-- win the game -->
+        <section id="section7-2" class="disappeared">
+            <div class="room1" class="sections">
+                <img src="img/win_game.png" alt="Win Game" width="400">
+
+                <h2 class="firstGame2">Congratulations! You accumulated + count + points. You won! You receive a clue for finding the key. The clue is: "bed".</h2>
+                <div class="panels-2">
+                    <div class="panel1">
+                        <img src="img/panou1.png" alt="panel" width="185">
+                    </div>
+                    <div class="panel2">
+                        <img src="img/panou2.png" alt="panel" width="220">
+                    </div>
+
+                    <h4 class="playAgain">Play Again</h4>
+                    <h4 class="leaveGameWin">Leave The Game</h4>
+
+                </div>
+            </div>
+        </section>
+
+        <section id="section8" class="disappeared">
+            <div class="room1" class="sections">
+                <img src="img/SearchGame.png" height="380">
+
+                <br>
+                <h2 class="secondGame">Look carefully and find the items.</h2>
+
+                <div class="enterGame2">START</div>
+
+            </div>
+
+        </section>
+
+        <section id="section8-1" class="disappeared">
+            <div class="room1" class="sections">
+
+                <div id="things3">
+
+                    <img src="img/level1.png" alt="level1" class="level1">
+                    <h3 class="tip">Find 5 chickens in Easter Market Stall!</h3>
+                    <img class="chicken" id="chick1" src="img/chick1.png" alt="chick1">
+                    <img class="chicken" id="chick2" src="img/chick2.png" alt="chick2">
+                    <img class="chicken" id="chick3" src="img/chick3.png" alt="chick3">
+                    <img class="chicken" id="chick4" src="img/chick4.png" alt="chick4">
+                    <img class="chicken" id="chick5" src="img/chick5.png" alt="chick5">
+                    <img class="roof" src="img/roof.png" alt="roof">
+                </div>
+                <div class="inventory-item3" data-tool="">
+                    <div class="chicks"><img src="img/chick1.png" alt="chick"></div>
+                    <div class="counter1"></div>
+                </div>
+            </div>
+        </section>
+
+        <section id="section9" class="disappeared">
+            <div class="room1" class="sections">
+                <img src="img/SearchGame.png" height="380">
+
+                <br>
+                <h2 class="secondGame">Congratulations! You've moved on to the next level. Good luck finding items!</h2>
+
+                <div class="enterGame2-2">START</div>
+
+            </div>
+
+        </section>
+
+        <section id="section9-1" class="disappeared">
+            <div class="room1" class="sections">
+
+                <div id="things2">
+                    <img src="img/level2.png" alt="level1" width="960px" height="540px">
+                    <h3 class="tip">Find 10 pills in the doctor's office!</h3>
+                    <img src="img/plant.png" alt="plant" class="plant">
+                    <img src="img/doctor.png" alt="doctor" class="doctor">
+                    <img src="img/farma.png" alt="logo" class="farma">
+                    <img src="img/syrup.png" alt="syrup" class="syrup">
+                    <img class="pill" id="pill1" src="img/pill1.png" alt="pill1">
+                    <img class="pill" id="pill2" src="img/pill2.png" alt="pill2">
+                    <img class="pill" id="pill3" src="img/pill3.png" alt="pill3">
+                    <img class="pill" id="pill4" src="img/pill4.png" alt="pill4">
+                    <img class="pill" id="pill5" src="img/pill5.png" alt="pill5">
+                    <img class="pill" id="pill6" src="img/pill6.png" alt="pill6">
+                    <img class="pill" id="pill7" src="img/pill7.png" alt="pill7">
+                    <img class="pill" id="pill8" src="img/pill8.png" alt="pill8">
+                    <img class="pill" id="pill9" src="img/pill9.png" alt="pill9">
+                    <img class="pill" id="pill10" src="img/pill10.png" alt="pill10">
+
+
+                </div>
+                <div class="inventory-item2" data-tool="">
+                    <div class="pills"><img src="img/pill3.png" alt="pill4"></div>
+                    <div class="counter2"></div>
+                </div>
+            </div>
+
+        </section>
+
+        <section id="section9-2" class="disappeared">
+            <div class="room1" class="sections">
+                <img src="img/SearchGame.png" height="380">
+
+                <br>
+                <h2 class="secondGame">Congratulations, you found all the items! You receive a clue to help you find the key. The clue is: <span>chat</span>.</h2>
+
+                <h4 class="playAgainSecondGame">Play Again</h4>
+                <h4 class="leaveGame">Leave The Game</h4>
+
+            </div>
+        </section>
+        <section id="section10" class="disappeared">
+            <div class="room1" class="sections">
+                <img src="img/vecteezy_grid-room-in-perspective-vector-illustration-in-3d-style_6471587.jpg" alt="virtual reality room" width="960px" height="540px">
+                <div id="things">
+                    <h3 class="tip">Click on chat icon.</h3>
+                    <img src="img/exit.png" alt="exit" class="exit">
+                    <img src="img/games.png" alt="" class="gamesFolder">
+                    <img src="img/folder.png" alt="" class="folder">
+                    <img src="img/chat.png" alt="" class="chat">
+                    <img src="img/battery.png" alt="" class="battery">
+
+                </div>
+            </div>
+
+        </section>
+        <section id="section12" class="disappeared">
+            <div class="room1" class="sections">
+                <img src="img/room5.png" alt="room" width="960px">
+                <div id=things>
+                    <h3>Play some computer games. These will give you the insights you need to find the key. Put your headphones on your ears, sit on the chair, put on the virtual reality glasses, put your hand on the mouse and click on the monitor screen.</h3>
+                    <img src="img/chair.png" alt="chair" class="chair">
+                    <img src="img/cds.png" alt="cds" class="cds">
+                    <img src="img/cup.png" alt="cup" class="cup">
+                    <img src="img/drawings.png" alt="drawings" class="drawings">
+                    <img src="img/headphones.png" alt="headphones" class="headphones">
+                    <img src="img/microphone.png" alt="microphone" class="mic">
+                    <img src="img/motivatieText.png" alt="text" class="motivationText">
+                    <img src="img/lamp.png" alt="lamp" class="lamp">
+                    <img src="img/posters.png" alt="poster" class="posters">
+                    <img src="img/trophy.png" alt="trophy" class="trophy">
+                    <img src="img/bookcase2.png" alt="" class="bookcase">
+                    <img src="img/pillow1.png" alt="" class="pillow1">
+                    <img src="img/pillow2.png" alt="" class="pillow2">
+                    <img src="img/books.png" alt="" class="books">
+                    <img src="img/frame.png" alt="" class="frame">
+                    <img src="img/mouse.png" alt="" class="mouse">
+                    <img src="img/videoGlasses.png" alt="virtual reality glasses" class="virtualRealityGlasses">
+                    <img src="img/speakers.png" alt="speakers" class="speakers">
+                    <img src="img/monitor.png" alt="monitor" class="monitor">
+                    <img src="img/monitor1.png" alt="monitor" class="monitor1">
+                </div>
+                <div id="inventory">
+                    <div class="inventory-item" data-tool="">
+                    </div>
+                    <div class="inventory-item" data-tool="">
+                    </div>
+                    <div class="inventory-item" data-tool="">
+                    </div>
+                    <div class="inventory-item" data-tool="">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <script>
+        let container = document.querySelector("#container");
+
+        /*Sections*/
+        let sections = document.querySelector(".sections");
+        let section1 = document.querySelector("#section1");
+        let section2 = document.querySelector("#section2");
+        let section3 = document.querySelector("#section3");
+        let section4 = document.querySelector("#section4");
+        let section5 = document.querySelector("#section5");
+        let section6 = document.querySelector("#section6");
+        let section7 = document.querySelector("#section7");
+        let section7_1 = document.querySelector("#section7-1");
+        let section7_2 = document.querySelector("#section7-2");
+        let section8 = document.querySelector("#section8");
+        let section8_1 = document.querySelector("#section8-1");
+        let section9 = document.querySelector("#section9");
+        let section9_1 = document.querySelector("#section9-1");
+        let section9_2 = document.querySelector("#section9-2");
+        let section10 = document.querySelector("#section10");
+
+        /*Section 1*/
+        let button = document.querySelector(".button");
+
+        /*Section 2*/
+        let arrow = document.querySelector(".arrow");
+
+        /*Section 3, 4, 5, 7 - text with tips*/
+        let tips = document.querySelector("h3");
+
+        /* Sounds */
+        let buttonSound1 = new Audio('sounds/mixkit-retro-arcade-casino-notification-211.wav');
+        let buttonSound2 = new Audio('sounds/mixkit-video-game-retro-click-237.wav');
+        let buttonSound3 = new Audio('sounds/sound1.mp3');
+        let buttonSound4 = new Audio('sounds/chair.wav');
+        let music1 = new Audio('sounds/fairytales-danijel-zambo-main-version-02-49-1381.mp3');
+        let music2 = new Audio('sounds/stardust-danijel-zambo-main-version-03-13-1372.mp3');
+        let music3 = new Audio('sounds/the-rhythm-of-the-africa-wav-8837.mp3');
+        let meerkatSound = new Audio('sounds/meerkat.mp3');
+        let music4 = new Audio('sounds/music4.mp3');
+
+        /* Things in the room */
+        let things = document.querySelector("#things");
+        let headphones = document.querySelector(".headphones");
+        let chair = document.querySelector(".chair");
+        let mouse = document.querySelector(".mouse");
+        let monitor1 = document.querySelector(".monitor1");
+        let monitor = document.querySelector(".monitor");
+        let vrGlasses = document.querySelector(".virtualRealityGlasses");
+
+        /* inventory */
+        let inventory = document.querySelector("#inventory");
+        let inventoryItems = document.querySelectorAll(".inventory-item");
+
+        /* Section 4 - folders (icons) in the computer screen */
+        let exitComputer = document.querySelector(".exit");
+        let games = document.querySelector(".gamesFolder");
+        let folder = document.querySelector(".folder");
+        let chat = document.querySelector(".chat");
+
+        /* Section 5 */
+        let exitButton = document.querySelector(".exitButton");
+        let game1 = document.querySelector(".game1");
+        let game2 = document.querySelector(".game2");
+        let titleGame1 = document.querySelector(".titleGame1");
+        let titleGame2 = document.querySelector(".titleGame2");
+
+        /* Section 6*/
+        let enterGame1 = document.querySelector(".enterGame1");
+        let firstGame1 = document.querySelector(".firstGame1");
+        let firstGame2 = document.querySelector(".firstGame2");
+
+        /* Section 7 */
+        let meerkat = document.querySelectorAll(".meerkat");
+        let counterDisplayElem = document.querySelector('#counter-display');
+        let tekst = document.querySelector('#messageText');
+        var klok = document.querySelector("#klok");
+        let tryAgain = document.querySelector(".tryAgain");
+        let leaveGameLost = document.querySelector(".leaveGameLost");
+        let playAgain = document.querySelector(".playAgain");
+        let leaveGameWin = document.querySelector(".leaveGameWin")
+
+        /* Section 8 */
+        let enterGame2 = document.querySelector(".enterGame2");
+
+        /* Section 9 */
+        let pill = document.querySelectorAll(".pill");
+        let inventoryItems2 = document.querySelector(".inventory-item2");
+        let counter1 = document.querySelector(".counter1");
+        let counter2 = document.querySelector(".counter2");
+        let pills = document.querySelector(".pills");
+        let chicken = document.querySelectorAll(".chicken");
+        let chicks = document.querySelector(".chicks");
+        let inventoryItems3 = document.querySelector(".inventory-item3");
+        let enterGame2_2 = document.querySelector(".enterGame2-2");
+        let playAgainSecondGame = document.querySelector(".playAgainSecondGame");
+        let leaveGame = document.querySelector(".leaveGame");
+
+        /*Section 1 -> Section 2*/
+        button.addEventListener('click', () => {
+
+            section1.classList.add("disappeared");
+            section2.classList.remove("disappeared");
+
+            buttonSound1.play();
+            music1.play();
+            music1.volume = 0.2;
+
+        });
+
+        /*Section 2 -> Section 3*/
+        arrow.addEventListener('click', () => {
+            buttonSound2.play()
+            section2.classList.add("disappeared");
+            section3.classList.remove("disappeared");
+        });
+
+        /* Section 3 */
+        let currentItem = 0;
+        let clickHeadphones = false;
+        let clickChair = false;
+        let clickMouse = false;
+        let clickMonitor = false;
+        let clickVRGlasses = false;
+        let placeHeadphones;
+        let placeChair;
+        let placeMonitor;
+        let placeVRGlasses;
+
+
+        headphones.addEventListener("click", () => {
+            buttonSound3.play()
+
+
+            if (!clickHeadphones) {
+                placeHeadphones = currentItem;
+                currentItem++;
+            }
+
+            inventoryItems[placeHeadphones].innerHTML = `<img src="img/headphones.png" alt="headphones" width="56px">`;
+            inventoryItems[placeHeadphones].setAttribute("data-tool", "headphones");
+            headphones.classList.add("disappeared");
+            clickHeadphones = true;
+            tips.innerHTML = "Good, you found the headphones!"
+            tips.classList.add("tip")
+
+        });
+
+        chair.addEventListener("click", () => {
+            buttonSound4.play()
+
+            if (!clickChair) {
+                placeChair = currentItem;
+                currentItem++;
+            }
+
+            inventoryItems[placeChair].innerHTML = `<img src="img/chair.png" alt="chair" height="60px">`;
+            inventoryItems[placeChair].setAttribute("data-tool", "chair");
+            chair.classList.add("disappeared");
+            clickChair = true;
+            tips.innerHTML = "So good to sit down, don't you think?"
+            tips.classList.add("tip")
+        });
+
+        vrGlasses.addEventListener("click", () => {
+            buttonSound3.play()
+
+            if (!clickVRGlasses) {
+                placeVRGlasses = currentItem;
+                currentItem++;
+            }
+
+            inventoryItems[placeVRGlasses].innerHTML = `<img src="img/videoGlasses.png" alt="virtual reality glasses" width="60px" margin-top="10px">`;
+            inventoryItems[placeVRGlasses].setAttribute("data-tool", "virtual reality glasses");
+            inventoryItems[placeVRGlasses].style.paddingTop = "10px";
+
+            vrGlasses.classList.add("disappeared");
+            clickVRGlasses = true;
+            tips.innerHTML = "Nice, you found the virtual reality glasses!"
+            tips.classList.add("tip");
+        });
+
+        mouse.addEventListener("click", () => {
+
+            buttonSound2.play()
+
+            if (!clickMouse) {
+                placeMouse = currentItem;
+                currentItem++;
+            }
+            mouse.classList.add("disappeared");
+            clickMouse = true;
+            inventoryItems[placeMouse].innerHTML = `<img src="img/mouse.png" alt="mouse" width="36px">`;
+            inventoryItems[placeMouse].setAttribute("data-tool", "mouse");
+            inventoryItems[placeMouse].style.paddingTop = "23px";
+            monitor1.style.display = "none";
+            tips.innerHTML = "Very good!";
+
+
+            if (clickMouse && (clickHeadphones && clickChair && clickVRGlasses)) {
+                tips.innerHTML = "Now click on the monitor screen."
+            }
+
+        })
+
+        monitor.addEventListener("click", () => {
+            buttonSound3.play();
+
+            if (!clickMonitor && (clickHeadphones && clickChair && clickVRGlasses)) {
+                clickMonitor = true;
+                tips.innerHTML = "Let's start!";
+
+                // enter in the virtual world
+                monitor.style.animation = "turnOnDesktop 4s linear 0.3s calc(1)";
+                inventory.classList.add("disappeared");
+                let delayInMilliseconds = 4280; //4.28 seconds
+
+                setTimeout(function() {
+                    section3.classList.add("disappeared");
+                    music1.pause();
+                    section4.classList.remove("disappeared");
+                    music2.play();
+                    music2.volume = 0.2;
+
+                }, delayInMilliseconds);
+
+            } else if (!clickMonitor && (clickHeadphones && clickChair && !clickVRGlasses)) {
+                tips.innerHTML = "Pick first the virtual reality glasses!";
+
+            } else if (!clickMonitor && (clickHeadphones && !clickChair && clickVRGlasses)) {
+                tips.innerHTML = "Relax and sit down on the chair."
+
+
+            } else if (!clickMonitor && (!clickHeadphones && clickChair && clickVRGlasses)) {
+                tips.innerHTML = "Pick first the headphones!"
+
+
+            } else if (!clickMonitor && clickMouse && (clickHeadphones || (clickChair || clickVRGlasses))) {
+                tips.innerHTML = "You have two more items to find.";
+
+            } else {
+                clickMonitor = true;
+                tips.innerHTML = "Let's start!";
+
+                // enter in the virtual world
+                monitor.style.animation = "turnOnDesktop 4s linear 0.3s calc(1)";
+                inventory.classList.add("disappeared");
+                section3.classList.add("disappeared");
+                music1.pause();
+                section4.classList.remove("disappeared");
+                music2.play();
+                music2.volume = 0.2;
+
+            }
+
+
+            /* Section 4 -> Section 5 */
+            games.addEventListener("click", () => {
+                section4.classList.add("disappeared");
+                section5.classList.remove("disappeared");
+            });
+
+            /* Section 5 -> Section 6 Instructions for Game Meerkats*/
+            game1.addEventListener("click", () => {
+                music2.pause();
+                section5.classList.add("disappeared");
+                section6.classList.remove("disappeared");
+                music3.play();
+                music3.volume = 0.2;
+            });
+
+            /* Section 6 -> Section 7 Play Game Meerkats */
+            enterGame1.addEventListener("click", () => {
+                section6.classList.add("disappeared");
+                section7.classList.remove("disappeared");
+                let seconds = 0;
+                let count = 0;
+                const myInterval = setInterval(myTimer, 1000);
+
+                function myTimer() {
+                    seconds++;
+
+                    klok.innerHTML = `Time: ${seconds}s`;
+                    if (seconds == 61) {
+                        clearInterval(myInterval);
+                        section7.classList.add("disappeared");
+
+
+                        if (count >= 100) {
+                            section7_2.classList.remove("disappeared");
+                            firstGame2.innerHTML = 'Congratulations! You accumulated ' + count + ' points. You won! You receive a clue that will help you find the key. The clue is: <span>bed</span>.';
+
+                        } else {
+                            section7_1.classList.remove("disappeared");
+                            firstGame1.innerHTML = 'You only accumulated ' + count + ' points. You lose.';
+                        }
+
+                        tryAgain.addEventListener('click', again);
+                        leaveGameLost.addEventListener('click', leaveIfLost);
+                        playAgain.addEventListener("click", playAgain1);
+                        leaveGameWin.addEventListener('click', leaveIfWin);
+
+                        function again() {
+                            section7_1.classList.add("disappeared");
+                            section6.classList.remove("disappeared");
+                            count = 0;
+                            counterDisplayElem.innerHTML = count;
+                            counterDisplayElem.innerHTML = "Total: " + count + " points";
+                        }
+
+                        function leaveIfLost() {
+                            section7_1.classList.add("disappeared");
+                            section5.classList.remove("disappeared");
+                        }
+
+                        function playAgain1() {
+                            section7_2.classList.add("disappeared");
+                            section6.classList.remove("disappeared");
+                            count = 0;
+                            counterDisplayElem.innerHTML = count;
+                            counterDisplayElem.innerHTML = "Total: " + count + " points";
+                        }
+
+                        function leaveIfWin() {
+                            section7_2.classList.add("disappeared");
+                            section5.classList.remove("disappeared");
+                        }
+                    }
+
+                }
+
+
+
+                for (let i = 0; i < meerkat.length; i++) {
+                    meerkat[0].style.animationDelay = `${Math.random() * 5}s`;
+                    meerkat[1].style.animationDelay = `${Math.random() * 5}s`;
+                    meerkat[2].style.animationDelay = `${Math.random() * 5}s`;
+                    meerkat[3].style.animationDelay = `${Math.random() * 5}s`;
+                    meerkat[4].style.animationDelay = `${Math.random() * 5}s`;
+                    meerkat[5].style.animationDelay = `${Math.random() * 5}s`;
+                    meerkat[6].style.animationDelay = `${Math.random() * 5}s`;
+                    meerkat[7].style.animationDelay = `${Math.random() * 5}s`;
+                    meerkat[8].style.animationDelay = `${Math.random() * 5}s`;
+
+                    meerkat[i].addEventListener('tap', clickMeerkat);
+                    meerkat[i].addEventListener('mousedown', clickMeerkat);
+                    meerkat[i].addEventListener('touch', clickMeerkat);
+                    meerkat[i].addEventListener('animationiteration', resetMeerkat);
+
+                    function clickMeerkat(evt) {
+                        let geraakteMeerkat = evt.target;
+                        let puntenGeraakte = geraakteMeerkat.getAttribute("data-punten");
+
+                        counterDisplayElem.innerHTML = count;
+                        count += parseInt(puntenGeraakte);
+                        evt.target.style.backgroundColor = 'brown';
+
+                        if (count > 1) {
+                            counterDisplayElem.innerHTML = "Total: " + count + " points";
+
+                        } else {
+                            counterDisplayElem.innerHTML = "Total: " + count + " point";
+                        }
+
+                        if ((i == 4) || (i == 6) || (i == 8)) {
+                            tekst.innerHTML = "You accumulated 1 point.";
+                            meerkatSound.play();
+                        } else {
+                            tekst.innerHTML = "You accumulated " + puntenGeraakte + " points.";
+                            meerkatSound.play();
+                        }
+                    }
+
+                    function resetMeerkat(evt) {
+                        console.log('animation restarted')
+                        evt.target.style.backgroundColor = '';
+                    }
+
+                }
+
+            })
+
+        });
+
+        exitButton.addEventListener('click', () => {
+
+            section5.classList.add("disappeared");
+            let delayInMilliseconds = 300;
+            setTimeout(function() {
+                if (game2played) {
+                    section10.classList.remove("disappeared");
+                } else {
+                    section4.classList.remove("disappeared");
+                }
+            }, delayInMilliseconds);
+
+
+        });
+
+        exitComputer.addEventListener('click', () => {
+            section4.classList.add("disappeared");
+            music2.pause();
+            let delayInMilliseconds = 500;
+
+            setTimeout(function() {
+
+                section3.classList.remove("disappeared");
+
+                music1.play();
+                music1.volume = 0.2;
+                inventory.classList.remove("disappeared");
+            }, delayInMilliseconds);
+
+        });
+
+        game2.addEventListener("click", () => {
+            music2.pause();
+            section5.classList.add("disappeared");
+            section8.classList.remove("disappeared");
+            music4.play();
+            music4.volume = 0.2;
+        });
+
+        enterGame2.addEventListener("click", () => {
+            section8.classList.add("disappeared");
+            section8_1.classList.remove("disappeared");
+        });
+
+        let chickAantal = 0;
+        for (let i = 0; i < chicken.length; i++) {
+
+            chicken[i].addEventListener('tap', clickChick);
+            chicken[i].addEventListener('mousedown', clickChick);
+            chicken[i].addEventListener('touch', clickChick);
+
+            function clickChick(evt) {
+                chickAantal++;
+                inventoryItems3.setAttribute("data-tool", "chick" + (chickAantal + 1));
+                evt.currentTarget.classList.add("disappeared");
+                counter1.innerHTML = chickAantal;
+                chicks.style.visibility = "visible";
+                if (chickAantal >= 5) {
+                    section8_1.classList.add("disappeared");
+                    section9.classList.remove("disappeared");
+                    chicks.style.visibility = "hidden";
+                }
+            }
+
+        }
+
+        enterGame2_2.addEventListener("click", () => {
+            section9.classList.add("disappeared");
+            section9_1.classList.remove("disappeared");
+        });
+
+        let pillaantal = 0;
+        for (let i = 0; i < pill.length; i++) {
+
+            pill[i].addEventListener('tap', clickPill);
+            pill[i].addEventListener('mousedown', clickPill);
+            pill[i].addEventListener('touch', clickPill);
+
+            function clickPill(evt) {
+                pillaantal++;
+                inventoryItems2.setAttribute("data-tool", "pill" + (pillaantal + 1));
+                evt.currentTarget.classList.add("disappeared");
+                counter2.innerHTML = pillaantal;
+                pills.style.visibility = "visible";
+                if (pillaantal >= 10) {
+                    section9_1.classList.add("disappeared");
+                    section9_2.classList.remove("disappeared");
+                    pills.style.visibility = "hidden";
+                }
+            }
+
+        }
+
+        playAgainSecondGame.addEventListener("click", () => {
+            section9_2.classList.add("disappeared");
+            section8.classList.remove("disappeared");
+        });
+        game2played = false;
+        leaveGame.addEventListener("click", () => {
+            section9_2.classList.add("disappeared");
+            section5.classList.remove("disappeared");
+            music4.pause();
+            music2.play();
+            game2played = true;
+        });
+    </script>
+</body>
+
+</html>
