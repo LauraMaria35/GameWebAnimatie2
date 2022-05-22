@@ -20,7 +20,7 @@
     <div id="container">
 
         <!-- enter game -->
-        <section id="section1" class="disappeared">
+        <section id="section1">
             <img src="img/6_generated.jpg" alt="" width="660">
             <div class="button">START</div>
         </section>
@@ -302,7 +302,7 @@
                 <img src="img/vecteezy_grid-room-in-perspective-vector-illustration-in-3d-style_6471587.jpg" alt="virtual reality room" width="960px" height="540px">
                 <div class="things">
                     <h3 class="tip">Click on chat icon.</h3>
-                    <img src="img/exit.png" alt="exit" class="exit">
+                    <img src="img/exit.png" alt="exit" class="exit1">
                     <img src="img/games.png" alt="games" class="gamesFolder">
                     <img src="img/folder.png" alt="folder" class="folder">
                     <img src="img/chat.png" alt="chat" class="chat">
@@ -317,7 +317,7 @@
                 <img src="img/vecteezy_grid-room-in-perspective-vector-illustration-in-3d-style_6471587.jpg" alt="virtual reality room" width="960px" height="540px">
                 <div class="things">
                     <h3 class="tip">Go find the key in the room.</h3>
-                    <img src="img/exit.png" alt="exit" class="exit">
+                    <img src="img/exit.png" alt="exit" class="exit2">
                     <img src="img/games.png" alt="games" class="gamesFolder">
                     <img src="img/folder.png" alt="folder" class="folder">
                     <img src="img/chat.png" alt="chat" class="chat">
@@ -331,7 +331,7 @@
                 <img src="img/vecteezy_grid-room-in-perspective-vector-illustration-in-3d-style_6471587.jpg" alt="virtual reality room" width="960px" height="540px">
                 <div class="things">
                     <h3 class="tip">Ups! The folder is empty.</h3>
-
+                    <div class="exitButton1">X</div>
                 </div>
             </div>
 
@@ -346,7 +346,7 @@
                     <img src="img/battery2.png" alt="" class="battery1">
                     <h3 class="tip">Chat with mom!</h3>
                     <img src="img/window.png" alt="window" class="window">
-                    <div class="exitButton">X</div>
+                    <div class="exitButton2">X</div>
                     <div>
                         <div id="Sam"><img src="img/Sam.png" alt="Sam" class="avatar"></div>
                     </div>
@@ -376,7 +376,7 @@
 
         </section>
 
-        <section id="section11-1" class="">
+        <section id="section11-1" class="disappeared">
             <div class="room1" class="sections">
                 <img src="img/vecteezy_grid-room-in-perspective-vector-illustration-in-3d-style_6471587.jpg" alt="virtual reality room" width="960px" height="540px">
 
@@ -574,9 +574,14 @@
         let things1 = document.querySelectorAll(".things");
         let chat = document.querySelector(".chat");
         let folder = document.querySelector(".folder");
+        let exitComputer1 = document.querySelector(".exit1");
+
+        /* Section 10-1 */
+        let exitComputer2 = document.querySelector(".exit2");
 
         /* Section 11 */
         let mom = document.querySelector("#mom");
+        let exitButton2 = document.querySelector(".exitButton2");
 
         /* Section 11-1 */
         let mySentence = document.querySelectorAll(".mySentence");
@@ -892,9 +897,9 @@
                     inventory.classList.remove("disappeared");
                 }, delayInMilliseconds);
 
-            } else if (chatted) {
+            } else if (chatted == true) {
                 section10_1.classList.add("disappeared");
-                section10_2.classList.remove("disappeared");
+                section12.classList.remove("disappeared");
             } else {
                 section4.classList.add("disappeared");
                 music2.pause();
@@ -1031,7 +1036,11 @@
         exitButton1.addEventListener('click', () => {
             section11_1.classList.add("disappeared");
             section10_1.classList.remove("disappeared");
-            chatted = true;
+        });
+
+        exitButton2.addEventListener('click', () => {
+            section11.classList.add("disappeared");
+            section10_1.classList.remove("disappeared");
         });
     </script>
 </body>
