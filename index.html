@@ -319,11 +319,11 @@
                 <img src="img/vecteezy_grid-room-in-perspective-vector-illustration-in-3d-style_6471587.jpg" alt="virtual reality room" width="960px" height="540px">
 
                 <div class="things">
-                    <img src="img/battery3.png" alt="" class="battery1">
+                    <img src="img/battery2.png" alt="" class="battery1">
                     <h3 class="tip">Chat with mom!</h3>
                     <img src="img/window.png" alt="window" class="window">
                     <div class="exitButton">X</div>
-                    <div class="">
+                    <div>
                         <div id="Sam"><img src="img/Sam.png" alt="Sam" class="avatar"></div>
                     </div>
                     <p class="titleAvatar1">Sam</p>
@@ -347,6 +347,61 @@
                     <p class="titleAvatar4">grandpa</p>
 
                 </div>
+
+            </div>
+
+        </section>
+
+        <section id="section11-1" class="disappeared">
+            <div class="room1" class="sections">
+                <img src="img/vecteezy_grid-room-in-perspective-vector-illustration-in-3d-style_6471587.jpg" alt="virtual reality room" width="960px" height="540px">
+
+                <div class="things">
+                    <img src="img/battery3.png" alt="" class="battery1">
+                    <h3 class="tip"></h3>
+                    <img src="img/window.png" alt="window" class="window1">
+                    <div class="exitButton1">X</div>
+                    <div id="chat">
+
+                        <div class="chatWithMom">
+                            <p id="firstSentence">Hi mom! You're busy? I would like to ask you something.</p>
+                            <br>
+                            <div class="mom">
+
+                                <p id="secondSentence"><img src="img/mom.png" alt="mom" class="avatar2">Hi! I'm not busy. What do you want to ask me?</p>
+                            </div>
+                            <br>
+                            <p id="thirdSentence">I'm at home and I can't open the door of my room because I can't find the key. Can you help me with some ideas on where it might be?</p>
+                            <br>
+                            <div class="mom">
+                                <p id="fourthSentence">
+                                    <img src="img/mom.png" alt="mom" class="avatar2">What did you do in the room today?</p>
+                            </div>
+                            <br>
+                            <p id="fifthSentence">I slept and then I played computer games.</p>
+                            <br>
+                            <div>
+                                <img src="img/mom.png" alt="mom" class="avatar2">
+                                <p class="mom">Did you look in bed or next to the bed? You usually keep your keys in your pocket. Maybe they fell while you were sleeping.</p>
+                            </div>
+                            <br>
+                            <p class="you">I didn't look there. I'm going to check now. Thanks.</p>
+                            <br>
+                            <div>
+                                <img src="img/mom.png" alt="mom" class="avatar2">
+                                <p class="mom">I hope you find the key soon. Don't forget that you have an afternoon appointment. Try not to be late.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="header">
+                        <div id="mom1"><img src="img/mom.png" alt="mom" class="avatar1"></div>
+
+                        <p class="titleAvatar">Mom</p>
+                        <img src="img/tel.png" alt="tel" id="tel">
+                        <img src="img/video.png" alt="video" id="video">
+                    </div>
+                </div>
+
 
             </div>
 
@@ -415,6 +470,7 @@
         let section9_2 = document.querySelector("#section9-2");
         let section10 = document.querySelector("#section10");
         let section11 = document.querySelector("#section11");
+        let section11_1 = document.querySelector("#section11-1");
         let section12 = document.querySelector("#section12");
 
         /*Section 1*/
@@ -494,6 +550,9 @@
         /* Section 10 */
         let chat = document.querySelector(".chat");
         let folder = document.querySelector(".folder");
+
+        /* Section 11 */
+        let mom = document.querySelector("#mom");
 
         /* Section 1 -> Section 2 */
         button.addEventListener('click', () => {
@@ -898,6 +957,12 @@
         chat.addEventListener("click", () => {
             section10.classList.add("disappeared");
             section11.classList.remove("disappeared");
+        })
+
+        /* Section 11 -> Section 11-1 (chat with mom) */
+        mom.addEventListener("click", () => {
+            section11.classList.add("disappeared");
+            section11_1.classList.remove("disappeared");
         })
     </script>
 </body>
