@@ -28,6 +28,59 @@ img {
     margin: 0 auto;
 }
 
+h1 {
+    position: absolute;
+    padding-top: 100px;
+    font-size: 60px;
+    color: #f5129e;
+    font-family: 'Cabin Sketch', cursive;
+    text-align: center;
+    top: 100px;
+    left: 380px;
+}
+
+h2 {
+    position: absolute;
+    font-size: 40px;
+    color: #6BEEFF;
+    font-family: 'Cabin Sketch', cursive;
+    margin: 0 auto;
+    text-align: center;
+    width: 700px;
+    top: 340px;
+    left: 150px;
+}
+
+h3 {
+    position: absolute;
+    font-size: 20px;
+    color: #6BEEFF;
+    font-family: 'Cabin Sketch', cursive;
+    margin: 0 auto;
+    text-align: center;
+    width: 700px;
+    top: -85px;
+    left: 140px;
+}
+
+span {
+    color: #f5129e;
+}
+
+#section2,
+#section7_1,
+#section7_2 {
+    width: 960px;
+    height: 540px;
+    margin: 0 auto;
+    position: absolute;
+    top: 0px;
+}
+
+.disappeared {
+    visibility: hidden;
+}
+
 
 /* Section 1 */
 
@@ -61,123 +114,6 @@ img {
 
 
 /* Section 2 */
-
-#section2,
-#section7_1,
-#section7_2 {
-    width: 960px;
-    height: 540px;
-    margin: 0 auto;
-    position: absolute;
-    top: 0px;
-}
-
-.enterGame1 {
-    color: #FF6EC7;
-    border-radius: 15px;
-    border-style: ridge;
-    border-width: 4px;
-    border-color: #6BEEFF;
-    padding: 4px;
-    padding-left: 22px;
-    padding-right: 22px;
-    text-shadow: 2px 2px 10px 2px;
-    position: absolute;
-    font-size: 22px;
-    top: 500px;
-    left: 385px;
-    box-shadow: 2px 2px 50px 2px #6BEEFF;
-    overflow: hidden;
-    text-shadow: 1px 1px 8px #f5129e;
-    transition: .2s;
-    font-family: 'Cabin Sketch', cursive;
-}
-
-.enterGame1:hover {
-    overflow: visible;
-    cursor: pointer;
-    transform: scale(0.9);
-    transition: .3s;
-}
-
-.enterGame2 {
-    color: #FF6EC7;
-    border-radius: 15px;
-    border-style: ridge;
-    border-width: 4px;
-    border-color: #6BEEFF;
-    padding: 4px;
-    padding-left: 22px;
-    padding-right: 22px;
-    text-shadow: 2px 2px 10px 2px;
-    position: absolute;
-    font-size: 22px;
-    top: 260px;
-    left: 625px;
-    box-shadow: 2px 2px 50px 2px #6BEEFF;
-    overflow: hidden;
-    text-shadow: 1px 1px 8px #f5129e;
-    transition: .2s;
-    font-family: 'Cabin Sketch', cursive;
-}
-
-.enterGame2:hover {
-    overflow: visible;
-    cursor: pointer;
-    transform: scale(0.9);
-    transition: .3s;
-}
-
-.enterGame2-2 {
-    color: #FF6EC7;
-    border-radius: 15px;
-    border-style: ridge;
-    border-width: 4px;
-    border-color: #6BEEFF;
-    padding: 4px;
-    padding-left: 22px;
-    padding-right: 22px;
-    text-shadow: 2px 2px 10px 2px;
-    position: absolute;
-    font-size: 22px;
-    top: 260px;
-    left: 625px;
-    box-shadow: 2px 2px 50px 2px #6BEEFF;
-    overflow: hidden;
-    text-shadow: 1px 1px 8px #f5129e;
-    transition: .2s;
-    font-family: 'Cabin Sketch', cursive;
-}
-
-.enterGame2-2:hover {
-    overflow: visible;
-    cursor: pointer;
-    transform: scale(0.9);
-    transition: .3s;
-}
-
-h1 {
-    position: absolute;
-    padding-top: 100px;
-    font-size: 60px;
-    color: #f5129e;
-    font-family: 'Cabin Sketch', cursive;
-    text-align: center;
-    top: 100px;
-    left: 380px;
-}
-
-h2 {
-    position: absolute;
-    font-size: 40px;
-    color: #6BEEFF;
-    font-family: 'Cabin Sketch', cursive;
-    margin: 0 auto;
-    text-align: center;
-    width: 700px;
-    top: 340px;
-    left: 150px;
-}
 
 .arrow {
     position: absolute;
@@ -229,24 +165,12 @@ h2 {
     position: relative;
 }
 
-h3 {
-    position: absolute;
-    font-size: 20px;
-    color: #6BEEFF;
-    font-family: 'Cabin Sketch', cursive;
-    margin: 0 auto;
-    text-align: center;
-    width: 700px;
-    top: -85px;
-    left: 140px;
-}
-
-#things img {
+.things img {
     display: block;
     position: absolute;
 }
 
-#things p {
+.things p {
     display: block;
     position: absolute;
 }
@@ -372,10 +296,6 @@ h3 {
     transform: scale(0.7);
 }
 
-.disappeared {
-    visibility: hidden;
-}
-
 @keyframes turnOnDesktop {
     0% {
         transform: scale(1) translateX(0%) translateY(0%);
@@ -386,7 +306,7 @@ h3 {
 }
 
 
-/* Section 5 */
+/* Section 4 */
 
 .exit {
     top: -30px;
@@ -417,34 +337,10 @@ h3 {
     transform: scale(0.5);
 }
 
-.folder {
-    top: 89px;
-    left: 319px;
-    transform: scale(0.5);
-    transition: .1s;
-}
-
-.folder:hover {
-    transform: scale(0.7);
-    transition: .2s;
-}
-
 .chat0 {
     top: 89px;
     left: 569px;
     transform: scale(0.5);
-}
-
-.chat {
-    top: 89px;
-    left: 569px;
-    transform: scale(0.5);
-    transition: .1s;
-}
-
-.chat:hover {
-    transform: scale(0.7);
-    transition: .2s;
 }
 
 .battery {
@@ -486,6 +382,22 @@ h3 {
     transition: .1s;
 }
 
+.titleGame1 {
+    padding: 10px;
+    font-size: 20px;
+    color: black;
+    top: 265px;
+    left: 199px;
+}
+
+.titleGame2 {
+    padding: 10px;
+    font-size: 20px;
+    color: black;
+    top: 265px;
+    left: 405px;
+}
+
 .game1 {
     width: 80px;
     top: 138px;
@@ -510,24 +422,8 @@ h3 {
     transition: .2s;
 }
 
-.titleGame1 {
-    padding: 10px;
-    font-size: 20px;
-    color: black;
-    top: 265px;
-    left: 199px;
-}
 
-.titleGame2 {
-    padding: 10px;
-    font-size: 20px;
-    color: black;
-    top: 265px;
-    left: 405px;
-}
-
-
-/* Section6 */
+/* Section 6 */
 
 .firstGame {
     font-size: 36px;
@@ -537,22 +433,32 @@ h3 {
     text-align: end;
 }
 
-.firstGame1,
-.firstGame2 {
-    font-size: 36px;
-    top: 100px;
-    left: 450px;
-    width: 400px;
-    text-align: end;
+.enterGame1 {
+    color: #FF6EC7;
+    border-radius: 15px;
+    border-style: ridge;
+    border-width: 4px;
+    border-color: #6BEEFF;
+    padding: 4px;
+    padding-left: 22px;
+    padding-right: 22px;
+    text-shadow: 2px 2px 10px 2px;
+    position: absolute;
+    font-size: 22px;
+    top: 500px;
+    left: 385px;
+    box-shadow: 2px 2px 50px 2px #6BEEFF;
+    overflow: hidden;
+    text-shadow: 1px 1px 8px #f5129e;
+    transition: .2s;
+    font-family: 'Cabin Sketch', cursive;
 }
 
-.secondGame {
-    font-size: 36px;
-    top: 100px;
-    left: 350px;
-    width: 580px;
-    text-align: end;
-    margin-left: 50px;
+.enterGame1:hover {
+    overflow: visible;
+    cursor: pointer;
+    transform: scale(0.9);
+    transition: .3s;
 }
 
 
@@ -570,9 +476,6 @@ h3 {
     display: block;
     position: absolute;
 }
-
-
-/*hideouts*/
 
 #hideout1 {
     top: 260px;
@@ -713,6 +616,18 @@ h3 {
     }
 }
 
+
+/* Section 7-1, 7-2 */
+
+.firstGame1,
+.firstGame2 {
+    font-size: 36px;
+    top: 100px;
+    left: 450px;
+    width: 400px;
+    text-align: end;
+}
+
 .panels-1 {
     position: absolute;
     margin: 0 auto;
@@ -786,9 +701,164 @@ h4:hover {
     left: 188px;
 }
 
-span {
-    color: #f5129e;
+
+/* Section 8 */
+
+.secondGame {
+    font-size: 36px;
+    top: 100px;
+    left: 350px;
+    width: 580px;
+    text-align: end;
+    margin-left: 50px;
 }
+
+.enterGame2 {
+    color: #FF6EC7;
+    border-radius: 15px;
+    border-style: ridge;
+    border-width: 4px;
+    border-color: #6BEEFF;
+    padding: 4px;
+    padding-left: 22px;
+    padding-right: 22px;
+    text-shadow: 2px 2px 10px 2px;
+    position: absolute;
+    font-size: 22px;
+    top: 260px;
+    left: 625px;
+    box-shadow: 2px 2px 50px 2px #6BEEFF;
+    overflow: hidden;
+    text-shadow: 1px 1px 8px #f5129e;
+    transition: .2s;
+    font-family: 'Cabin Sketch', cursive;
+}
+
+.enterGame2:hover {
+    overflow: visible;
+    cursor: pointer;
+    transform: scale(0.9);
+    transition: .3s;
+}
+
+
+/* Section 8-1 */
+
+.chicken {
+    transform: scale(0.3);
+    position: absolute;
+}
+
+#things3 {
+    width: 960px;
+    height: 540px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.chicks {
+    position: absolute;
+    visibility: hidden;
+}
+
+.chicks img {
+    position: absolute;
+    top: -50px;
+    left: -20px;
+    transform: scale(0.4);
+}
+
+#chick1 {
+    top: 215px;
+    left: 273px;
+}
+
+#chick2 {
+    top: 278px;
+    left: 453px;
+}
+
+#chick3 {
+    top: 413px;
+    left: 476px;
+}
+
+#chick4 {
+    top: 219px;
+    left: 583px;
+}
+
+#chick5 {
+    top: -70px;
+    left: 418px;
+}
+
+.roof {
+    position: absolute;
+    top: 0;
+    left: 240px
+}
+
+.inventory-item3 {
+    width: 64px;
+    height: 64px;
+    background-size: contain;
+    margin: auto;
+    border: 3px solid #6BEEFF;
+    border-radius: 10px;
+    position: relative;
+    background-color: #21242b;
+    margin-top: 10px;
+}
+
+.counter1 {
+    position: absolute;
+    background-color: rgba(0, 0, 0, 1);
+    width: 20px;
+    height: 20px;
+    left: 0px;
+    bottom: 0px;
+    border-radius: 15px;
+    text-align: center;
+    line-height: 25px;
+    color: gold;
+    font-family: 'Special Elite', cursive;
+    font-size: 14px;
+}
+
+
+/* Section 9 */
+
+.enterGame2-2 {
+    color: #FF6EC7;
+    border-radius: 15px;
+    border-style: ridge;
+    border-width: 4px;
+    border-color: #6BEEFF;
+    padding: 4px;
+    padding-left: 22px;
+    padding-right: 22px;
+    text-shadow: 2px 2px 10px 2px;
+    position: absolute;
+    font-size: 22px;
+    top: 260px;
+    left: 625px;
+    box-shadow: 2px 2px 50px 2px #6BEEFF;
+    overflow: hidden;
+    text-shadow: 1px 1px 8px #f5129e;
+    transition: .2s;
+    font-family: 'Cabin Sketch', cursive;
+}
+
+.enterGame2-2:hover {
+    overflow: visible;
+    cursor: pointer;
+    transform: scale(0.9);
+    transition: .3s;
+}
+
+
+/* Section 9-1 */
 
 .pills {
     position: absolute;
@@ -885,19 +955,15 @@ span {
     left: 140px;
 }
 
-.counter1 {
-    position: absolute;
-    background-color: rgba(0, 0, 0, 1);
-    width: 20px;
-    height: 20px;
-    left: 0px;
-    bottom: 0px;
-    border-radius: 15px;
-    text-align: center;
-    line-height: 25px;
-    color: gold;
-    font-family: 'Special Elite', cursive;
-    font-size: 14px;
+.inventory-item2 {
+    width: 64px;
+    height: 64px;
+    background-size: contain;
+    margin: auto;
+    border: 3px solid #6BEEFF;
+    border-radius: 10px;
+    position: relative;
+    background-color: #21242b;
 }
 
 .counter2 {
@@ -915,96 +981,35 @@ span {
     font-size: 14px;
 }
 
-.inventory-item2 {
-    width: 64px;
-    height: 64px;
-    background-size: contain;
-    margin: auto;
-    border: 3px solid #6BEEFF;
-    border-radius: 10px;
-    position: relative;
-    background-color: #21242b;
+
+/* Section 10 */
+
+.folder {
+    top: 89px;
+    left: 319px;
+    transform: scale(0.5);
+    transition: .1s;
 }
 
-.inventory-item3 {
-    width: 64px;
-    height: 64px;
-    background-size: contain;
-    margin: auto;
-    border: 3px solid #6BEEFF;
-    border-radius: 10px;
-    position: relative;
-    background-color: #21242b;
-    margin-top: 10px;
+.folder:hover {
+    transform: scale(0.7);
+    transition: .2s;
 }
 
-.chicken {
-    transform: scale(0.3);
-    position: absolute;
+.chat {
+    top: 89px;
+    left: 569px;
+    transform: scale(0.5);
+    transition: .1s;
 }
 
-#things3 {
-    width: 960px;
-    height: 540px;
-    margin: 0 auto;
-    position: relative;
+.chat:hover {
+    transform: scale(0.7);
+    transition: .2s;
 }
 
-.chicks {
-    position: absolute;
-    visibility: hidden;
-}
 
-.chicks img {
-    position: absolute;
-    top: -50px;
-    left: -20px;
-    transform: scale(0.4);
-}
-
-#chick1 {
-    top: 215px;
-    left: 273px;
-}
-
-#chick2 {
-    top: 278px;
-    left: 453px;
-}
-
-#chick3 {
-    top: 413px;
-    left: 476px;
-}
-
-#chick4 {
-    top: 219px;
-    left: 583px;
-}
-
-#chick5 {
-    top: -70px;
-    left: 418px;
-}
-
-.roof {
-    position: absolute;
-    top: 0;
-    left: 240px
-}
-
-.playAgainSecondGame {
-    top: 400px;
-    left: 250px;
-    width: 150px;
-    padding: 17px;
-    text-align: center;
-}
-
-.playAgainSecondGame:hover {
-    background-color: #f5129e;
-    color: black;
-}
+/* Section 9-2 */
 
 .leaveGame {
     top: 400px;
