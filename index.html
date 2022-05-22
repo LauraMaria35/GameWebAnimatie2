@@ -300,13 +300,37 @@
         <section id="section10" class="disappeared">
             <div class="room1" class="sections">
                 <img src="img/vecteezy_grid-room-in-perspective-vector-illustration-in-3d-style_6471587.jpg" alt="virtual reality room" width="960px" height="540px">
-                <div class="chatWindow">
+                <div class="things">
                     <h3 class="tip">Click on chat icon.</h3>
                     <img src="img/exit.png" alt="exit" class="exit">
-                    <img src="img/games.png" alt="" class="gamesFolder">
-                    <img src="img/folder.png" alt="" class="folder">
-                    <img src="img/chat.png" alt="" class="chat">
-                    <img src="img/battery2.png" alt="" class="battery">
+                    <img src="img/games.png" alt="games" class="gamesFolder">
+                    <img src="img/folder.png" alt="folder" class="folder">
+                    <img src="img/chat.png" alt="chat" class="chat">
+                    <img src="img/battery2.png" alt="battery" class="battery">
+
+                </div>
+            </div>
+
+        </section>
+        <section id="section10-1" class="disappeared">
+            <div class="room1" class="sections">
+                <img src="img/vecteezy_grid-room-in-perspective-vector-illustration-in-3d-style_6471587.jpg" alt="virtual reality room" width="960px" height="540px">
+                <div class="things">
+                    <h3 class="tip">Go find the key in the room.</h3>
+                    <img src="img/exit.png" alt="exit" class="exit">
+                    <img src="img/games.png" alt="games" class="gamesFolder">
+                    <img src="img/folder.png" alt="folder" class="folder">
+                    <img src="img/chat.png" alt="chat" class="chat">
+                    <img src="img/battery3.png" alt="battery" class="battery">
+                </div>
+            </div>
+        </section>
+
+        <section id="section10-2" class="disappeared">
+            <div class="room1" class="sections">
+                <img src="img/vecteezy_grid-room-in-perspective-vector-illustration-in-3d-style_6471587.jpg" alt="virtual reality room" width="960px" height="540px">
+                <div class="things">
+                    <h3 class="tip">Ups! The folder is empty.</h3>
 
                 </div>
             </div>
@@ -314,7 +338,7 @@
         </section>
 
         <!-- in the chat section -->
-        <section id="section11" class="">
+        <section id="section11" class="disappeared">
             <div class="room1" class="sections">
                 <img src="img/vecteezy_grid-room-in-perspective-vector-illustration-in-3d-style_6471587.jpg" alt="virtual reality room" width="960px" height="540px">
 
@@ -352,7 +376,7 @@
 
         </section>
 
-        <section id="section11-1" class="disappeared">
+        <section id="section11-1" class="">
             <div class="room1" class="sections">
                 <img src="img/vecteezy_grid-room-in-perspective-vector-illustration-in-3d-style_6471587.jpg" alt="virtual reality room" width="960px" height="540px">
 
@@ -466,6 +490,8 @@
         let section9_1 = document.querySelector("#section9-1");
         let section9_2 = document.querySelector("#section9-2");
         let section10 = document.querySelector("#section10");
+        let section10_1 = document.querySelector("#section10-1");
+        let section10_2 = document.querySelector("#section10-2");
         let section11 = document.querySelector("#section11");
         let section11_1 = document.querySelector("#section11-1");
         let section12 = document.querySelector("#section12");
@@ -545,6 +571,7 @@
         let leaveGame = document.querySelector(".leaveGame");
 
         /* Section 10 */
+        let things1 = document.querySelectorAll(".things");
         let chat = document.querySelector(".chat");
         let folder = document.querySelector(".folder");
 
@@ -554,6 +581,7 @@
         /* Section 11-1 */
         let mySentence = document.querySelectorAll(".mySentence");
         let momSentence = document.querySelectorAll(".momSentence");
+        let exitButton1 = document.querySelector(".exitButton1");
 
         /* Section 1 -> Section 2 */
         button.addEventListener('click', () => {
@@ -838,12 +866,17 @@
             setTimeout(function() {
                 if (game2played && game1played) {
                     section10.classList.remove("disappeared");
+                    folder.addEventListener('click', () => {
+                        section10.classList.add("disappeared");
+                        section10_1.classList.remove("disappeared");
+                    })
                 } else {
                     section4.classList.remove("disappeared");
                 }
             }, delayInMilliseconds);
         });
 
+        let chatted = false;
         /* Exit virtual world. */
         exitComputer.addEventListener('click', () => {
 
@@ -859,6 +892,9 @@
                     inventory.classList.remove("disappeared");
                 }, delayInMilliseconds);
 
+            } else if (chatted) {
+                section10_1.classList.add("disappeared");
+                section10_2.classList.remove("disappeared");
             } else {
                 section4.classList.add("disappeared");
                 music2.pause();
@@ -989,7 +1025,14 @@
                 }
             }
 
-        })
+        });
+
+        /* Exit chat room */
+        exitButton1.addEventListener('click', () => {
+            section11_1.classList.add("disappeared");
+            section10_1.classList.remove("disappeared");
+            chatted = true;
+        });
     </script>
 </body>
 

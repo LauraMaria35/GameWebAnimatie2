@@ -982,6 +982,22 @@ h4:hover {
 }
 
 
+/* Section 9-2 */
+
+.leaveGame {
+    top: 400px;
+    left: 600px;
+    width: 150px;
+    padding: 5px;
+    text-align: center;
+}
+
+.leaveGame:hover {
+    background-color: #f5129e;
+    color: black;
+}
+
+
 /* Section 10 */
 
 .folder {
@@ -1006,22 +1022,6 @@ h4:hover {
 .chat:hover {
     transform: scale(0.7);
     transition: .2s;
-}
-
-
-/* Section 9-2 */
-
-.leaveGame {
-    top: 400px;
-    left: 600px;
-    width: 150px;
-    padding: 5px;
-    text-align: center;
-}
-
-.leaveGame:hover {
-    background-color: #f5129e;
-    color: black;
 }
 
 
