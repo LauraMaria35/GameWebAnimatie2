@@ -1113,50 +1113,19 @@
     }
     
     #chat {
-        top: 100px;
-        left: 150px;
+        top: 180px;
+        left: 178px;
         position: absolute;
-        width: 300px;
+        width: 605px;
+        height: 345px;
+        overflow: hidden;
     }
     
-    .header {
-        position: absolute;
-        top: 115px;
-        left: 185px;
-    }
-    
-    .avatar1 {
-        width: 60px;
-        position: absolute;
-    }
-    
-    .titleAvatar {
-        padding: 10px;
-        font-size: 20px;
-        color: black;
-        font-weight: bold;
-        top: 5px;
-        left: 60px;
-        position: absolute;
-    }
-    
-    #tel {
-        position: absolute;
-        transform: scale(0.3);
-        top: -31px;
-        left: 420px;
-    }
-    
-    #video {
-        position: absolute;
-        transform: scale(0.4);
-        top: -8px;
-        left: 505px;
-    }
+    @keyframes {}
     
     .chatWithMom {
         top: -100px;
-        left: 100px;
+        left: 73px;
         position: absolute;
         width: 300px;
     }
@@ -1225,4 +1194,87 @@
         width: 280px;
         top: 100px;
         left: 100px;
+    }
+    
+    #fifthSentence {
+        top: 820px;
+        left: 240px;
+        padding: 10px;
+        background-color: #a936c0;
+        color: white;
+        font-size: 18px;
+        position: absolute;
+        border-radius: 20px;
+        width: 280px;
+    }
+    
+    #sixthSentence {
+        padding: 10px;
+        background-color: rgb(186, 186, 186);
+        color: black;
+        font-size: 18px;
+        position: absolute;
+        border-radius: 20px;
+        width: 280px;
+        top: 265px;
+        left: 100px;
+    }
+    
+    #seventhSentence {
+        top: 1030px;
+        left: 240px;
+        padding: 10px;
+        background-color: #a936c0;
+        color: white;
+        font-size: 18px;
+        position: absolute;
+        border-radius: 20px;
+        width: 280px;
+    }
+    
+    #eighthSentence {
+        padding: 10px;
+        background-color: rgb(186, 186, 186);
+        color: black;
+        font-size: 18px;
+        position: absolute;
+        border-radius: 20px;
+        width: 280px;
+        top: 470px;
+        left: 100px;
+    }
+    
+    .header {
+        position: absolute;
+        top: 115px;
+        left: 185px;
+    }
+    
+    .avatar1 {
+        width: 60px;
+        position: absolute;
+    }
+    
+    .titleAvatar {
+        padding: 10px;
+        font-size: 20px;
+        color: black;
+        font-weight: bold;
+        top: 5px;
+        left: 60px;
+        position: absolute;
+    }
+    
+    #tel {
+        position: absolute;
+        transform: scale(0.3);
+        top: -31px;
+        left: 420px;
+    }
+    
+    #video {
+        position: absolute;
+        transform: scale(0.4);
+        top: -8px;
+        left: 505px;
     }
