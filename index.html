@@ -306,15 +306,52 @@
                     <img src="img/games.png" alt="" class="gamesFolder">
                     <img src="img/folder.png" alt="" class="folder">
                     <img src="img/chat.png" alt="" class="chat">
-                    <img src="img/battery.png" alt="" class="battery">
+                    <img src="img/battery2.png" alt="" class="battery">
 
                 </div>
             </div>
 
         </section>
 
-        <!-- back in the room where pillows, cds, ... and the key, are available -->
+        <!-- in the chat section -->
         <section id="section11" class="disappeared">
+            <div class="room1" class="sections">
+                <img src="img/vecteezy_grid-room-in-perspective-vector-illustration-in-3d-style_6471587.jpg" alt="virtual reality room" width="960px" height="540px">
+                <div class="things">
+                    <h3 class="tip">Chat with mom!</h3>
+                    <img src="img/window.png" alt="window" class="window">
+                    <div class="exitButton">X</div>
+                    <div>
+                        <div id="Sam"><img src="img/Sam.png" alt="Sam" class="avatar"></div>
+                        <div class="offline"></div>
+                    </div>
+                    <p class="titleAvatar1">Sam</p>
+
+                    <div>
+                        <div id="mom"><img src="img/mom.png" alt="mom" class="avatar"></div>
+                        <div class="online"></div>
+                    </div>
+                    <p class="titleAvatar2">mom</p>
+
+                    <div>
+                        <div id="brother"><img src="img/brother.png" alt="brother" class="avatar"></div>
+                        <div class="offline"></div>
+                    </div>
+                    <p class="titleAvatar3">brother</p>
+
+                    <div>
+                        <div id="grandpa"><img src="img/grandpa.png" alt="grandpa" class="avatar"></div>
+                        <div class="offline"></div>
+                    </div>
+                    <p class="titleAvatar4">grandpa</p>
+
+                    <img src="img/battery3.png" alt="" class="battery">
+                </div>
+            </div>
+        </section>
+
+        <!-- back in the room where pillows, cds, ... and the key, are available -->
+        <section id="section12" class="disappeared">
             <div class="room1" class="sections">
                 <img src="img/room5.png" alt="room" width="960px">
                 <div class=things>
@@ -376,6 +413,7 @@
         let section9_2 = document.querySelector("#section9-2");
         let section10 = document.querySelector("#section10");
         let section11 = document.querySelector("#section11");
+        let section12 = document.querySelector("#section12");
 
         /*Section 1*/
         let button = document.querySelector(".button");
@@ -413,8 +451,6 @@
         /* Section 4 - folders (icons) in the computer screen */
         let exitComputer = document.querySelector(".exit");
         let games = document.querySelector(".gamesFolder");
-        let folder = document.querySelector(".folder");
-        let chat = document.querySelector(".chat");
 
         /* Section 5 */
         let exitButton = document.querySelector(".exitButton");
@@ -452,6 +488,10 @@
         let inventoryItems3 = document.querySelector(".inventory-item3");
         let enterGame2_2 = document.querySelector(".enterGame2-2");
         let leaveGame = document.querySelector(".leaveGame");
+
+        /* Section 10 */
+        let chat = document.querySelector(".chat");
+        let folder = document.querySelector(".folder");
 
         /* Section 1 -> Section 2 */
         button.addEventListener('click', () => {
@@ -734,7 +774,7 @@
             section5.classList.add("disappeared");
             let delayInMilliseconds = 300;
             setTimeout(function() {
-                if (game2played) {
+                if (game2played && game1played) {
                     section10.classList.remove("disappeared");
                 } else {
                     section4.classList.remove("disappeared");
@@ -851,6 +891,12 @@
                 tips.innerHTML = "You played already this game. Your clue was <span>chat</span>.";
             }
         });
+
+        /* Section 10 -> Section 11 (enter chat) */
+        chat.addEventListener("click", () => {
+            section10.classList.add("disappeared");
+            section11.classList.remove("disappeared");
+        })
     </script>
 </body>
 

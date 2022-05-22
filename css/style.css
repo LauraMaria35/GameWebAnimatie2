@@ -1023,3 +1023,41 @@ h4:hover {
     background-color: #f5129e;
     color: black;
 }
+
+
+/* Section 11 */
+
+.avatar {
+    width: 80px;
+}
+
+#Sam {
+    top: 165px;
+    left: 199px;
+}
+
+#mom {}
+
+#brother {}
+
+#grandpa {}
+
+.titleAvatar1 {
+    padding: 10px;
+    font-size: 20px;
+    color: black;
+    top: 265px;
+    left: 199px;
+}
+
+.titleAvatar2 {
+    padding: 10px;
+    font-size: 20px;
+    color: black;
+    top: 265px;
+    left: 259px;
+}
+
+.offline {}
+
+.online {}
