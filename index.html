@@ -367,7 +367,7 @@
                         </div>
                         <br>
                         <div class="momSentence">
-                            <img src="img/mom.png" alt="mom" class="avatar2">Hi! I'm not busy. What do you want to ask me?
+                            <img src="img/mom.png" alt="mom" class="avatar2">Hi! I'm not busy. What do you want to know?
                         </div>
                         <br>
                         <div class="mySentence">I'm at home and I can't open the door of my room because I can't find the key. Can you help me with some ideas on where it might be?
@@ -377,10 +377,10 @@
                             <img src="img/mom.png" alt="mom" class="avatar2">What did you do in the room today?
                         </div>
                         <br>
-                        <div class="mySentence">I slept and then I played computer games.</div>
+                        <div class="mySentence">I slept and after that I played some computer games.</div>
                         <br>
                         <div class="momSentence">
-                            <img src="img/mom.png" alt="mom" class="avatar2"> Did you look in bed or next to the bed? You usually keep your keys in your pocket. Maybe they fell while you were sleeping.</p>
+                            <img src="img/mom.png" alt="mom" class="avatar2"> Did you look on the bed or next to the bed? You usually keep your keys in your pocket. Maybe they fell while you were sleeping.</p>
                         </div>
                         <br>
                         <div class="mySentence">I didn't look there. I'm going to check now. Thanks.</div>
@@ -967,21 +967,23 @@
             section11_1.classList.remove("disappeared");
 
             for (let i = 0; i < mySentence.length; i++) {
-                mySentence[i].style.animation = "mySentences 20s linear initial";
+
                 mySentence[0].style.animationDelay = 4 + "s";
-                mySentence[1].style.animationDelay = 18 + "s";
-                mySentence[2].style.animationDelay = 32 + "s";
-                mySentence[3].style.animationDelay = 46 + "s";
+                mySentence[1].style.animationDelay = 14 + "s";
+                mySentence[2].style.animationDelay = 26 + "s";
+                mySentence[3].style.animationDelay = 38 + "s";
+
                 if (mySentence[i].style.top <= 40 + "px") {
                     mySentence[i].style.visibility = "visible";
                 }
             }
             for (let i = 0; i < momSentence.length; i++) {
-                momSentence[i].style.animation = "momsSentences 20s linear initial";
-                momSentence[0].style.animationDelay = 11 + "s";
-                momSentence[1].style.animationDelay = 25 + "s";
-                momSentence[2].style.animationDelay = 39 + "s";
-                momSentence[3].style.animationDelay = 52 + "s";
+
+                momSentence[0].style.animationDelay = 9 + "s";
+                momSentence[1].style.animationDelay = 21 + "s";
+                momSentence[2].style.animationDelay = 31 + "s";
+                momSentence[3].style.animationDelay = 43 + "s";
+
                 if (momSentence[i].style.top <= 100 + "px") {
                     momSentence[i].style.visibility = "visible";
                 }

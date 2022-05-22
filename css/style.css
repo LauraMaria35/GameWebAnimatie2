@@ -1163,7 +1163,7 @@ h4:hover {
 .header {
     position: absolute;
     top: 115px;
-    left: 185px;
+    left: 190px;
 }
 
 .avatar1 {
@@ -1177,7 +1177,7 @@ h4:hover {
     color: black;
     font-weight: bold;
     top: 5px;
-    left: 60px;
+    left: 65px;
     position: absolute;
 }
 
@@ -1185,7 +1185,7 @@ h4:hover {
     position: absolute;
     transform: scale(0.3);
     top: -31px;
-    left: 420px;
+    left: 425px;
 }
 
 #video {
@@ -1203,9 +1203,10 @@ h4:hover {
     position: absolute;
     border-radius: 20px;
     width: 280px;
-    top: 0px;
+    top: 430px;
     left: 315px;
     visibility: hidden;
+    animation: mySentences 14s linear;
 }
 
 .momSentence {
@@ -1216,25 +1217,26 @@ h4:hover {
     border-radius: 20px;
     position: absolute;
     width: 280px;
-    top: 0px;
+    top: 430px;
     left: 56px;
     visibility: hidden;
+    animation: momsSentences 14s linear;
 }
 
 @keyframes mySentences {
-    0% {
+    from {
         top: 230px;
     }
-    100% {
-        top: -40px;
+    to {
+        top: 0px;
     }
 }
 
 @keyframes momsSentences {
-    0% {
+    from {
         top: 230px;
     }
-    100% {
-        top: -40px;
+    to {
+        top: 0px;
     }
 }
