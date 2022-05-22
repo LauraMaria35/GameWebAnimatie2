@@ -535,7 +535,7 @@
         let games = document.querySelector(".gamesFolder");
 
         /* Section 5 */
-        let exitButton = document.querySelector(".exitButton");
+        let exitButton = document.getElementsByClassName("exitButton");
         let game1 = document.querySelector(".game1");
         let game2 = document.querySelector(".game2");
         let titleGame1 = document.querySelector(".titleGame1");
@@ -872,15 +872,14 @@
         /* Exit games window */
         exitButton.addEventListener('click', () => {
             section5.classList.add("disappeared");
-            let delayInMilliseconds = 300;
-            setTimeout(function() {
-                if (game2played && game1played) {
-                    section10.classList.remove("disappeared");
 
-                } else {
-                    section4.classList.remove("disappeared");
-                }
-            }, delayInMilliseconds);
+            if (game2played && game1played) {
+                section10.classList.remove("disappeared");
+
+            } else {
+                section4.classList.remove("disappeared");
+            }
+
         });
 
 
@@ -927,86 +926,81 @@
         });
 
         /* Search Game (Section 5 -> Section 8) */
-        let game2played = false;
+
         game2.addEventListener("click", () => {
-            if (!game2played) {
-                music2.pause();
-                section5.classList.add("disappeared");
-                section8.classList.remove("disappeared");
-                music4.play();
-                music4.volume = 0.2;
+            music2.pause();
+            section5.classList.add("disappeared");
+            section8.classList.remove("disappeared");
+            music4.play();
+            music4.volume = 0.2;
 
-                /* Play level1 (Section 8 -> Section 8-1) */
-                enterGame2.addEventListener("click", () => {
-                    section8.classList.add("disappeared");
-                    section8_1.classList.remove("disappeared");
+            let chickAantal = 0;
+            for (let i = 0; i < chicken.length; i++) {
 
-                });
+                chicken[i].addEventListener('tap', clickChick);
+                chicken[i].addEventListener('mousedown', clickChick);
+                chicken[i].addEventListener('touch', clickChick);
 
-                let chickAantal = 0;
-                for (let i = 0; i < chicken.length; i++) {
-
-                    chicken[i].addEventListener('tap', clickChick);
-                    chicken[i].addEventListener('mousedown', clickChick);
-                    chicken[i].addEventListener('touch', clickChick);
-
-                    function clickChick(evt) {
-                        chickAantal++;
-                        inventoryItems3.setAttribute("data-tool", "chick" + (chickAantal + 1));
-                        evt.currentTarget.classList.add("disappeared");
-                        counter1.innerHTML = chickAantal;
-                        chicks.style.visibility = "visible";
-                        if (chickAantal >= 5) {
-                            section8_1.classList.add("disappeared");
-                            section9.classList.remove("disappeared");
-                            chicks.style.visibility = "hidden";
-                            counter1.innerHTML = 0;
-                        }
-
+                function clickChick(evt) {
+                    chickAantal++;
+                    inventoryItems3.setAttribute("data-tool", "chick" + (chickAantal + 1));
+                    evt.currentTarget.classList.add("disappeared");
+                    counter1.innerHTML = chickAantal;
+                    chicks.style.visibility = "visible";
+                    if (chickAantal >= 5) {
+                        section8_1.classList.add("disappeared");
+                        section9.classList.remove("disappeared");
+                        chicks.style.visibility = "hidden";
+                        counter1.innerHTML = 0;
                     }
+
                 }
-
-                /* Play level2 (Section 9 -> Section 9-1) */
-                enterGame2_2.addEventListener("click", () => {
-                    section9.classList.add("disappeared");
-                    section9_1.classList.remove("disappeared");
-                });
-
-                let pillaantal = 0;
-                for (let i = 0; i < pill.length; i++) {
-
-                    pill[i].addEventListener('tap', clickPill);
-                    pill[i].addEventListener('mousedown', clickPill);
-                    pill[i].addEventListener('touch', clickPill);
-
-                    function clickPill(evt) {
-                        pillaantal++;
-                        inventoryItems2.setAttribute("data-tool", "pill" + (pillaantal + 1));
-                        evt.currentTarget.classList.add("disappeared");
-                        counter2.innerHTML = pillaantal;
-                        pills.style.visibility = "visible";
-                        if (pillaantal >= 10) {
-                            section9_1.classList.add("disappeared");
-                            section9_2.classList.remove("disappeared");
-                            pills.style.visibility = "hidden";
-                        }
-                    }
-                }
-
-                /* Exit Search Game */
-                leaveGame.addEventListener("click", () => {
-                    section9_2.classList.add("disappeared");
-                    section5.classList.remove("disappeared");
-                    music4.pause();
-                    music2.play();
-                    game2played = true;
-                });
-
-            } else {
-                tips.innerHTML = "You played already this game. Your clue was <span>chat</span>.";
             }
+
+
+            let pillaantal = 0;
+            for (let i = 0; i < pill.length; i++) {
+
+                pill[i].addEventListener('tap', clickPill);
+                pill[i].addEventListener('mousedown', clickPill);
+                pill[i].addEventListener('touch', clickPill);
+
+                function clickPill(evt) {
+                    pillaantal++;
+                    inventoryItems2.setAttribute("data-tool", "pill" + (pillaantal + 1));
+                    evt.currentTarget.classList.add("disappeared");
+                    counter2.innerHTML = pillaantal;
+                    pills.style.visibility = "visible";
+                    if (pillaantal >= 10) {
+                        section9_1.classList.add("disappeared");
+                        section9_2.classList.remove("disappeared");
+                        pills.style.visibility = "hidden";
+                    }
+                }
+            }
+            let game2played = false;
+            /* Exit Search Game */
+            leaveGame.addEventListener("click", () => {
+                section9_2.classList.add("disappeared");
+                section5.classList.remove("disappeared");
+                music4.pause();
+                music2.play();
+                game2played = true;
+            });
+
         });
 
+        /* Play level1 (Section 8 -> Section 8-1) */
+        enterGame2.addEventListener("click", () => {
+            section8.classList.add("disappeared");
+            section8_1.classList.remove("disappeared");
+
+        });
+        /* Play level2 (Section 9 -> Section 9-1) */
+        enterGame2_2.addEventListener("click", () => {
+            section9.classList.add("disappeared");
+            section9_1.classList.remove("disappeared");
+        });
         /* Section 10 -> Section 11 (enter chat) */
         let chatted = false;
 
