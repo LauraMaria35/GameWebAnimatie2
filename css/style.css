@@ -1028,36 +1028,89 @@ h4:hover {
 /* Section 11 */
 
 .avatar {
-    width: 80px;
+    width: 100px;
+    position: absolute;
 }
 
 #Sam {
-    top: 165px;
+    position: absolute;
+    top: 130px;
     left: 199px;
 }
 
-#mom {}
+#mom {
+    position: absolute;
+    top: 130px;
+    left: 329px;
+    cursor: pointer;
+}
 
-#brother {}
+#brother {
+    position: absolute;
+    top: 130px;
+    left: 459px;
+}
 
-#grandpa {}
+#grandpa {
+    position: absolute;
+    top: 270px;
+    left: 199px;
+}
 
 .titleAvatar1 {
     padding: 10px;
     font-size: 20px;
     color: black;
-    top: 265px;
-    left: 199px;
+    top: 225px;
+    left: 222px;
+    position: absolute;
 }
 
 .titleAvatar2 {
     padding: 10px;
     font-size: 20px;
     color: black;
-    top: 265px;
-    left: 259px;
+    top: 225px;
+    left: 348px;
+    position: absolute;
 }
 
-.offline {}
+.titleAvatar3 {
+    padding: 10px;
+    font-size: 20px;
+    color: black;
+    top: 225px;
+    left: 470px;
+    position: absolute;
+}
 
-.online {}
+.titleAvatar4 {
+    padding: 10px;
+    font-size: 20px;
+    color: black;
+    top: 363px;
+    left: 206px;
+    position: absolute;
+}
+
+.online {
+    position: absolute;
+    background-color: rgb(47, 255, 64);
+    width: 28px;
+    height: 28px;
+    left: 68px;
+    cursor: pointer;
+    top: 70px;
+    border-radius: 15px;
+    font-size: 14px;
+    border: #fff;
+    border-width: 4px;
+    border-style: solid;
+}
+
+.battery1 {
+    top: -50px;
+    left: 769px;
+    transform: scale(0.2);
+    position: absolute;
+}
