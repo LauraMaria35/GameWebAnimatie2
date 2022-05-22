@@ -1038,6 +1038,18 @@ h4:hover {
 
 /* Section 10-1 */
 
+.folder1 {
+    top: 89px;
+    left: 319px;
+    transform: scale(0.5);
+    transition: .1s;
+}
+
+.folder1:hover {
+    transform: scale(0.7);
+    transition: .2s;
+}
+
 .exit2 {
     top: -30px;
     left: -45px;
@@ -1047,6 +1059,27 @@ h4:hover {
 .exit2:hover {
     transform: scale(0.4);
     transition: .2s;
+}
+
+
+/* Section 10-2 */
+
+.exitButton3 {
+    position: absolute;
+    padding: 5px;
+    padding-top: 1px;
+    padding-bottom: 1px;
+    background-color: #fff;
+    border-style: groove;
+    border-width: 1px;
+    border-color: rgb(41, 79, 249);
+    top: 83px;
+    left: 563px;
+}
+
+.exitButton3:hover {
+    transform: scale(0.9);
+    transition: .1s;
 }
 
 

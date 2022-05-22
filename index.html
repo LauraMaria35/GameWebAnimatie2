@@ -20,7 +20,7 @@
     <div id="container">
 
         <!-- enter game -->
-        <section id="section1">
+        <section id="section1" class="disappeared">
             <img src="img/6_generated.jpg" alt="" width="660">
             <div class="button">START</div>
         </section>
@@ -297,7 +297,7 @@
         </section>
 
         <!-- folder and chat icons are available -->
-        <section id="section10" class="disappeared">
+        <section id="section10" class="">
             <div class="room1" class="sections">
                 <img src="img/vecteezy_grid-room-in-perspective-vector-illustration-in-3d-style_6471587.jpg" alt="virtual reality room" width="960px" height="540px">
                 <div class="things">
@@ -319,7 +319,7 @@
                     <h3 class="tip">Go find the key in the room.</h3>
                     <img src="img/exit.png" alt="exit" class="exit2">
                     <img src="img/games.png" alt="games" class="gamesFolder">
-                    <img src="img/folder.png" alt="folder" class="folder">
+                    <img src="img/folder.png" alt="folder" class="folder1">
                     <img src="img/chat.png" alt="chat" class="chat">
                     <img src="img/battery3.png" alt="battery" class="battery">
                 </div>
@@ -331,7 +331,8 @@
                 <img src="img/vecteezy_grid-room-in-perspective-vector-illustration-in-3d-style_6471587.jpg" alt="virtual reality room" width="960px" height="540px">
                 <div class="things">
                     <h3 class="tip">Ups! The folder is empty.</h3>
-                    <div class="exitButton1">X</div>
+                    <img src="img/window.png" alt="window" class="window">
+                    <div class="exitButton3">X</div>
                 </div>
             </div>
 
@@ -578,6 +579,10 @@
 
         /* Section 10-1 */
         let exitComputer2 = document.querySelector(".exit2");
+        let folder1 = document.querySelector(".folder1");
+
+        /* Section 10-2 */
+        let exitButton3 = document.querySelector(".exitButton3");
 
         /* Section 11 */
         let mom = document.querySelector("#mom");
@@ -871,17 +876,14 @@
             setTimeout(function() {
                 if (game2played && game1played) {
                     section10.classList.remove("disappeared");
-                    folder.addEventListener('click', () => {
-                        section10.classList.add("disappeared");
-                        section10_1.classList.remove("disappeared");
-                    })
+
                 } else {
                     section4.classList.remove("disappeared");
                 }
             }, delayInMilliseconds);
         });
 
-        let chatted = false;
+
         /* Exit virtual world. */
         exitComputer.addEventListener('click', () => {
 
@@ -897,9 +899,6 @@
                     inventory.classList.remove("disappeared");
                 }, delayInMilliseconds);
 
-            } else if (chatted == true) {
-                section10_1.classList.add("disappeared");
-                section12.classList.remove("disappeared");
             } else {
                 section4.classList.add("disappeared");
                 music2.pause();
@@ -912,6 +911,34 @@
                     inventory.classList.remove("disappeared");
                 }, delayInMilliseconds);
             }
+        });
+        exitComputer1.addEventListener('click', () => {
+            section10.classList.add("disappeared");
+            section4.classList.add("disappeared");
+            music2.pause();
+            music1.play();
+            let delayInMilliseconds = 500;
+            setTimeout(function() {
+                section3.classList.remove("disappeared");
+                music1.play();
+                music1.volume = 0.2;
+                inventory.classList.remove("disappeared");
+            }, delayInMilliseconds);
+
+        });
+        exitComputer2.addEventListener('click', () => {
+            section10_1.classList.add("disappeared");
+            section12.classList.add("disappeared");
+            music2.pause();
+            music1.play();
+            let delayInMilliseconds = 500;
+            setTimeout(function() {
+                section3.classList.remove("disappeared");
+                music1.play();
+                music1.volume = 0.2;
+                inventory.classList.remove("disappeared");
+            }, delayInMilliseconds);
+
         });
 
         /* Search Game (Section 5 -> Section 8) */
@@ -996,7 +1023,10 @@
         });
 
         /* Section 10 -> Section 11 (enter chat) */
+        let chatted = false;
+
         chat.addEventListener("click", () => {
+
             section10.classList.add("disappeared");
             section11.classList.remove("disappeared");
         })
@@ -1016,6 +1046,13 @@
 
                 if (mySentence[i].style.top <= 40 + "px") {
                     mySentence[i].style.visibility = "visible";
+
+                    exitButton1.addEventListener('click', () => {
+                        section11_1.classList.add("disappeared");
+                        section10_1.classList.remove("disappeared");
+                        mySentence[i].style.animation = "";
+                        mySentence[i].style.visibility = "hidden";
+                    });
                 }
             }
             for (let i = 0; i < momSentence.length; i++) {
@@ -1027,21 +1064,33 @@
 
                 if (momSentence[i].style.top <= 100 + "px") {
                     momSentence[i].style.visibility = "visible";
+
+                    exitButton1.addEventListener('click', () => {
+                        section11_1.classList.add("disappeared");
+                        section10_1.classList.remove("disappeared");
+                        momSentence[i].style.animation = "";
+                        momSentence[i].style.visibility = "hidden";
+                    });
                 }
             }
 
-        });
-
-        /* Exit chat room */
-        exitButton1.addEventListener('click', () => {
-            section11_1.classList.add("disappeared");
-            section10_1.classList.remove("disappeared");
         });
 
         exitButton2.addEventListener('click', () => {
             section11.classList.add("disappeared");
             section10_1.classList.remove("disappeared");
         });
+
+        exitButton3.addEventListener('click', () => {
+            section10_2.classList.add("disappeared");
+            section10_1.classList.remove("disappeared");
+        });
+
+        /* Exit chat room */
+        folder1.addEventListener('click', () => {
+            section10_1.classList.add("disappeared");
+            section10_2.classList.remove("disappeared");
+        })
     </script>
 </body>
 
