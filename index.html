@@ -20,7 +20,7 @@
     <div id="container">
 
         <!-- enter game -->
-        <section id="section1" class="disappeared">
+        <section id="section1">
             <img src="img/6_generated.jpg" alt="" width="660">
             <div class="button">START</div>
         </section>
@@ -297,7 +297,7 @@
         </section>
 
         <!-- folder and chat icons are available -->
-        <section id="section10" class="">
+        <section id="section10" class="disappeared">
             <div class="room1" class="sections">
                 <img src="img/vecteezy_grid-room-in-perspective-vector-illustration-in-3d-style_6471587.jpg" alt="virtual reality room" width="960px" height="540px">
                 <div class="things">
@@ -887,33 +887,6 @@
         /* Exit virtual world. */
         exitComputer.addEventListener('click', () => {
 
-            if (game1played && game2played) {
-                section10.classList.add("disappeared");
-                music2.pause();
-                music1.play();
-                let delayInMilliseconds = 500;
-                setTimeout(function() {
-                    section11.classList.remove("disappeared");
-                    music1.play();
-                    music1.volume = 0.2;
-                    inventory.classList.remove("disappeared");
-                }, delayInMilliseconds);
-
-            } else {
-                section4.classList.add("disappeared");
-                music2.pause();
-                music1.play();
-                let delayInMilliseconds = 500;
-                setTimeout(function() {
-                    section3.classList.remove("disappeared");
-                    music1.play();
-                    music1.volume = 0.2;
-                    inventory.classList.remove("disappeared");
-                }, delayInMilliseconds);
-            }
-        });
-        exitComputer1.addEventListener('click', () => {
-            section10.classList.add("disappeared");
             section4.classList.add("disappeared");
             music2.pause();
             music1.play();
@@ -926,14 +899,26 @@
             }, delayInMilliseconds);
 
         });
-        exitComputer2.addEventListener('click', () => {
-            section10_1.classList.add("disappeared");
-            section12.classList.add("disappeared");
+        exitComputer1.addEventListener('click', () => {
+            section10.classList.add("disappeared");
             music2.pause();
             music1.play();
             let delayInMilliseconds = 500;
             setTimeout(function() {
-                section3.classList.remove("disappeared");
+                section12.classList.remove("disappeared");
+                music1.play();
+                music1.volume = 0.2;
+                inventory.classList.remove("disappeared");
+            }, delayInMilliseconds);
+
+        });
+        exitComputer2.addEventListener('click', () => {
+            section10_1.classList.add("disappeared");
+            music2.pause();
+            music1.play();
+            let delayInMilliseconds = 500;
+            setTimeout(function() {
+                section12.classList.remove("disappeared");
                 music1.play();
                 music1.volume = 0.2;
                 inventory.classList.remove("disappeared");
@@ -1039,39 +1024,38 @@
 
             for (let i = 0; i < mySentence.length; i++) {
 
-                mySentence[0].style.animationDelay = 4 + "s";
-                mySentence[1].style.animationDelay = 14 + "s";
-                mySentence[2].style.animationDelay = 26 + "s";
-                mySentence[3].style.animationDelay = 38 + "s";
+                mySentence[0].style.animationDelay = 6 + "s";
+                mySentence[1].style.animationDelay = 16 + "s";
+                mySentence[2].style.animationDelay = 28 + "s";
+                mySentence[3].style.animationDelay = 40 + "s";
 
                 if (mySentence[i].style.top <= 40 + "px") {
                     mySentence[i].style.visibility = "visible";
 
-                    exitButton1.addEventListener('click', () => {
-                        section11_1.classList.add("disappeared");
-                        section10_1.classList.remove("disappeared");
-                        mySentence[i].style.animation = "";
-                        mySentence[i].style.visibility = "hidden";
-                    });
                 }
+                exitButton1.addEventListener('click', () => {
+                    section11_1.classList.add("disappeared");
+                    section10_1.classList.remove("disappeared");
+                    mySentence[i].style.animation = "";
+                    mySentence[i].style.visibility = "hidden";
+                });
             }
             for (let i = 0; i < momSentence.length; i++) {
 
-                momSentence[0].style.animationDelay = 9 + "s";
-                momSentence[1].style.animationDelay = 21 + "s";
-                momSentence[2].style.animationDelay = 31 + "s";
-                momSentence[3].style.animationDelay = 43 + "s";
+                momSentence[0].style.animationDelay = 11 + "s";
+                momSentence[1].style.animationDelay = 23 + "s";
+                momSentence[2].style.animationDelay = 33 + "s";
+                momSentence[3].style.animationDelay = 45 + "s";
 
                 if (momSentence[i].style.top <= 100 + "px") {
                     momSentence[i].style.visibility = "visible";
-
-                    exitButton1.addEventListener('click', () => {
-                        section11_1.classList.add("disappeared");
-                        section10_1.classList.remove("disappeared");
-                        momSentence[i].style.animation = "";
-                        momSentence[i].style.visibility = "hidden";
-                    });
                 }
+                exitButton1.addEventListener('click', () => {
+                    section11_1.classList.add("disappeared");
+                    section10_1.classList.remove("disappeared");
+                    momSentence[i].style.animation = "";
+                    momSentence[i].style.visibility = "hidden";
+                });
             }
 
         });
