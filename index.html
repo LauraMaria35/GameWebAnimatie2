@@ -363,33 +363,32 @@
                     <div class="exitButton1">X</div>
                     <div id="chat">
 
-                        <div class="chatWithMom">
-                            <p id="firstSentence">Hi mom! You're busy? I would like to ask you something.</p>
-                            <br>
-                            <div class="mom">
-                                <p id="secondSentence"><img src="img/mom.png" alt="mom" class="avatar2">Hi! I'm not busy. What do you want to ask me?</p>
-                            </div>
-                            <br>
-                            <p id="thirdSentence">I'm at home and I can't open the door of my room because I can't find the key. Can you help me with some ideas on where it might be?</p>
-                            <br>
-                            <div class="mom">
-                                <p id="fourthSentence">
-                                    <img src="img/mom.png" alt="mom" class="avatar2">What did you do in the room today?</p>
-                            </div>
-                            <br>
-                            <p id="fifthSentence">I slept and then I played computer games.</p>
-                            <br>
-                            <div class="mom">
-                                <p id="sixthSentence"><img src="img/mom.png" alt="mom" class="avatar2"> Did you look in bed or next to the bed? You usually keep your keys in your pocket. Maybe they fell while you were sleeping.</p>
-                            </div>
-                            <br>
-                            <p id="seventhSentence">I didn't look there. I'm going to check now. Thanks.</p>
-                            <br>
-                            <div class="mom">
-                                <p id="eighthSentence">
-                                    <img src="img/mom.png" alt="mom" class="avatar2">I hope you find the key soon. Don't forget that you have an afternoon appointment. Try not to be late.</p>
-                            </div>
+                        <div class="mySentence">Hi mom! You're busy? I would like to ask you something.
                         </div>
+                        <br>
+                        <div class="momSentence">
+                            <img src="img/mom.png" alt="mom" class="avatar2">Hi! I'm not busy. What do you want to ask me?
+                        </div>
+                        <br>
+                        <div class="mySentence">I'm at home and I can't open the door of my room because I can't find the key. Can you help me with some ideas on where it might be?
+                        </div>
+                        <br>
+                        <div class="momSentence">
+                            <img src="img/mom.png" alt="mom" class="avatar2">What did you do in the room today?
+                        </div>
+                        <br>
+                        <div class="mySentence">I slept and then I played computer games.</div>
+                        <br>
+                        <div class="momSentence">
+                            <img src="img/mom.png" alt="mom" class="avatar2"> Did you look in bed or next to the bed? You usually keep your keys in your pocket. Maybe they fell while you were sleeping.</p>
+                        </div>
+                        <br>
+                        <div class="mySentence">I didn't look there. I'm going to check now. Thanks.</div>
+                        <br>
+                        <div class="momSentence">
+                            <img src="img/mom.png" alt="mom" class="avatar2">I hope you find the key soon. Don't forget that you have an afternoon appointment. Try not to be late.
+                        </div>
+
                     </div>
                     <div class="header">
                         <div id="mom1"><img src="img/mom.png" alt="mom" class="avatar1"></div>
@@ -551,6 +550,10 @@
 
         /* Section 11 */
         let mom = document.querySelector("#mom");
+
+        /* Section 11-1 */
+        let mySentence = document.querySelectorAll(".mySentence");
+        let momSentence = document.querySelectorAll(".momSentence");
 
         /* Section 1 -> Section 2 */
         button.addEventListener('click', () => {
@@ -959,8 +962,31 @@
 
         /* Section 11 -> Section 11-1 (chat with mom) */
         mom.addEventListener("click", () => {
+
             section11.classList.add("disappeared");
             section11_1.classList.remove("disappeared");
+
+            for (let i = 0; i < mySentence.length; i++) {
+                mySentence[i].style.animation = "mySentences 20s linear initial";
+                mySentence[0].style.animationDelay = 4 + "s";
+                mySentence[1].style.animationDelay = 18 + "s";
+                mySentence[2].style.animationDelay = 32 + "s";
+                mySentence[3].style.animationDelay = 46 + "s";
+                if (mySentence[i].style.top <= 40 + "px") {
+                    mySentence[i].style.visibility = "visible";
+                }
+            }
+            for (let i = 0; i < momSentence.length; i++) {
+                momSentence[i].style.animation = "momsSentences 20s linear initial";
+                momSentence[0].style.animationDelay = 11 + "s";
+                momSentence[1].style.animationDelay = 25 + "s";
+                momSentence[2].style.animationDelay = 39 + "s";
+                momSentence[3].style.animationDelay = 52 + "s";
+                if (momSentence[i].style.top <= 100 + "px") {
+                    momSentence[i].style.visibility = "visible";
+                }
+            }
+
         })
     </script>
 </body>
