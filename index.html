@@ -525,6 +525,9 @@
         let monitor1 = document.querySelector(".monitor1");
         let monitor = document.querySelector(".monitor");
         let vrGlasses = document.querySelector(".virtualRealityGlasses");
+        let pillow1 = document.querySelector(".pillow1");
+        let pillow2 = document.querySelector(".pillow2");
+        let cds = document.querySelector(".cds");
 
         /* inventory */
         let inventory = document.querySelector("#inventory");
@@ -1110,6 +1113,62 @@
             section12.classList.add("disappeared")
             section10.classList.remove("disappeared");
         })
+
+        let clickPillow1 = false;
+        let clickPillow2 = false;
+        let clickCDs = false;
+
+        let placePillow1;
+        let placePillow2;
+        let placeCDs;
+        let curentItem1 = 0;
+        pillow1.addEventListener("click", () => {
+            buttonSound3.play()
+
+            if (!clickPillow1) {
+                placePillow1 = currentItem;
+                currentItem1++;
+            }
+
+            inventoryItems[placePillow1].innerHTML = `<img src="img/pillow1.png" alt="pillow" width="56px">`;
+            inventoryItems[placeHeadphones].setAttribute("data-tool", "headphones");
+            pillow1.classList.add("disappeared");
+            clickPillow1 = true;
+            tips.innerHTML = "Keep searching!";
+            tips.classList.add("tip");
+        });
+
+        pillow2.addEventListener("click", () => {
+            buttonSound3.play()
+
+            if (!clickPillow2) {
+                placePillow2 = currentItem;
+                currentItem1++;
+            }
+
+            inventoryItems[placePillow2].innerHTML = `<img src="img/pillow2.png" alt="pillow" width="56px">`;
+            inventoryItems[placeHeadphones].setAttribute("data-tool", "headphones");
+            pillow2.classList.add("disappeared");
+            clickPillow2 = true;
+            tips.innerHTML = "Keep searching!";
+            tips.classList.add("tip");
+        });
+
+        cds.addEventListener("click", () => {
+            buttonSound3.play()
+
+            if (!clickCDs) {
+                placeCDs = currentItem;
+                currentItem1++;
+            }
+
+            inventoryItems[placeCDs].innerHTML = `<img src="img/cds.png" alt="pillow" width="56px">`;
+            inventoryItems[placeHeadphones].setAttribute("data-tool", "headphones");
+            cds.classList.add("disappeared");
+            clickCDs = true;
+            tips.innerHTML = "Keep searching!";
+            tips.classList.add("tip");
+        });
     </script>
 </body>
 
