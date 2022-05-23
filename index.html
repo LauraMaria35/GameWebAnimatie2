@@ -42,7 +42,7 @@
         <section id="section3" class="disappeared">
             <div class="room1" class="sections">
                 <img src="img/room5.png" alt="room" width="960px">
-                <div class=things>
+                <div class="things">
                     <h3>Play some computer games. These will give you the insights you need to find the key. Put your headphones on your ears, sit on the chair, put on the virtual reality glasses, put your hand on the mouse and click on the monitor screen.</h3>
                     <img src="img/chair.png" alt="chair" class="chair">
                     <img src="img/cds.png" alt="cds" class="cds">
@@ -453,8 +453,8 @@
                     <img src="img/mouse.png" alt="" class="mouse">
                     <img src="img/videoGlasses.png" alt="virtual reality glasses" class="virtualRealityGlasses">
                     <img src="img/speakers.png" alt="speakers" class="speakers">
-                    <img src="img/monitor.png" alt="monitor" class="monitor">
-                    <img src="img/monitor1.png" alt="monitor" class="monitor1">
+                    <img src="img/monitor.png" alt="monitor" class="monitor2">
+
                 </div>
                 <div id="inventory">
                     <div class="inventory-item" data-tool="">
@@ -535,7 +535,7 @@
         let games = document.querySelector(".gamesFolder");
 
         /* Section 5 */
-        let exitButton = document.getElementsByClassName("exitButton");
+        let exitButton = document.querySelector(".exitButton");
         let game1 = document.querySelector(".game1");
         let game2 = document.querySelector(".game2");
         let titleGame1 = document.querySelector(".titleGame1");
@@ -592,6 +592,10 @@
         let mySentence = document.querySelectorAll(".mySentence");
         let momSentence = document.querySelectorAll(".momSentence");
         let exitButton1 = document.querySelector(".exitButton1");
+
+        /* Section12 */
+        let monitor2 = document.querySelector(".monitor2");
+
 
         /* Section 1 -> Section 2 */
         button.addEventListener('click', () => {
@@ -868,49 +872,75 @@
                 }
             }
         })
-
+        let game2played = false;
         /* Exit games window */
         exitButton.addEventListener('click', () => {
             section5.classList.add("disappeared");
-
-            if (game2played && game1played) {
-                section10.classList.remove("disappeared");
-
-            } else {
-                section4.classList.remove("disappeared");
-            }
-
+            let delayInMilliseconds = 300;
+            setTimeout(function() {
+                if (game2played) {
+                    section10.classList.remove("disappeared");
+                } else {
+                    section4.classList.remove("disappeared");
+                }
+            }, delayInMilliseconds);
         });
 
 
         /* Exit virtual world. */
         exitComputer.addEventListener('click', () => {
 
-            section4.classList.add("disappeared");
-            music2.pause();
-            music1.play();
-            let delayInMilliseconds = 500;
-            setTimeout(function() {
-                section3.classList.remove("disappeared");
+            if (game1played && game2played) {
+                section4.classList.add("disappeared");
+                music2.pause();
                 music1.play();
-                music1.volume = 0.2;
-                inventory.classList.remove("disappeared");
-            }, delayInMilliseconds);
+                let delayInMilliseconds = 500;
+                setTimeout(function() {
+                    section3.classList.remove("disappeared");
+                    music1.play();
+                    music1.volume = 0.2;
+                    inventory.classList.remove("disappeared");
+                }, delayInMilliseconds);
+            } else {
 
+                section4.classList.add("disappeared");
+                music2.pause();
+                music1.play();
+                let delayInMilliseconds = 500;
+                setTimeout(function() {
+                    section3.classList.remove("disappeared");
+                    music1.play();
+                    music1.volume = 0.2;
+                    inventory.classList.remove("disappeared");
+                }, delayInMilliseconds);
+            }
         });
+
         exitComputer1.addEventListener('click', () => {
             section10.classList.add("disappeared");
             music2.pause();
             music1.play();
-            let delayInMilliseconds = 500;
-            setTimeout(function() {
-                section12.classList.remove("disappeared");
-                music1.play();
-                music1.volume = 0.2;
-                inventory.classList.remove("disappeared");
-            }, delayInMilliseconds);
+            if (game1played && game2played) {
+                let delayInMilliseconds = 500;
+                setTimeout(function() {
+                    section12.classList.remove("disappeared");
+                    music1.play();
+                    music1.volume = 0.2;
+                    inventory.classList.remove("disappeared");
+                }, delayInMilliseconds);
+            } else {
+                let delayInMilliseconds = 500;
+                setTimeout(function() {
+                    section3.classList.remove("disappeared");
+                    music1.play();
+                    music1.volume = 0.2;
+                    inventory.classList.remove("disappeared");
+                }, delayInMilliseconds);
+            }
+
 
         });
+
         exitComputer2.addEventListener('click', () => {
             section10_1.classList.add("disappeared");
             music2.pause();
@@ -926,13 +956,19 @@
         });
 
         /* Search Game (Section 5 -> Section 8) */
-
         game2.addEventListener("click", () => {
             music2.pause();
             section5.classList.add("disappeared");
             section8.classList.remove("disappeared");
             music4.play();
             music4.volume = 0.2;
+        });
+
+        /* Play level1 (Section 8 -> Section 8-1) */
+        enterGame2.addEventListener("click", () => {
+            section8.classList.add("disappeared");
+            section8_1.classList.remove("disappeared");
+
 
             let chickAantal = 0;
             for (let i = 0; i < chicken.length; i++) {
@@ -978,17 +1014,16 @@
                     }
                 }
             }
-            let game2played = false;
-            /* Exit Search Game */
-            leaveGame.addEventListener("click", () => {
-                section9_2.classList.add("disappeared");
-                section5.classList.remove("disappeared");
-                music4.pause();
-                music2.play();
-                game2played = true;
-            });
-
         });
+        /* Exit Search Game */
+        leaveGame.addEventListener("click", () => {
+            section9_2.classList.add("disappeared");
+            section5.classList.remove("disappeared");
+            music4.pause();
+            music2.play();
+            game2played = true;
+        });
+
 
         /* Play level1 (Section 8 -> Section 8-1) */
         enterGame2.addEventListener("click", () => {
@@ -1068,6 +1103,12 @@
         folder1.addEventListener('click', () => {
             section10_1.classList.add("disappeared");
             section10_2.classList.remove("disappeared");
+        })
+
+        /* Section 12 */
+        monitor2.addEventListener('click', () => {
+            section12.classList.add("disappeared")
+            section10.classList.remove("disappeared");
         })
     </script>
 </body>
