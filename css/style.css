@@ -1350,3 +1350,15 @@ h4:hover {
     border-radius: 10px;
     position: relative;
 }
+
+.key {
+    top: 307px;
+    left: 737px;
+    width: 20px;
+}
+
+.blanket {
+    top: 280px;
+    left: 597px;
+    transform: scale(0.7);
+}
