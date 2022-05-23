@@ -20,7 +20,7 @@
     <div id="container">
 
         <!-- enter game -->
-        <section id="section1">
+        <section id="section1" class="disappeared">
             <img src="img/6_generated.jpg" alt="" width="660">
             <div class="button">START</div>
         </section>
@@ -430,7 +430,7 @@
         </section>
 
         <!-- back in the room where pillows, cds, ... and the key, are available -->
-        <section id="section12" class="disappeared">
+        <section id="section12" class="">
             <div class="room1" class="sections">
                 <img src="img/room5.png" alt="room" width="960px">
                 <div class=things>
@@ -456,14 +456,14 @@
                     <img src="img/monitor.png" alt="monitor" class="monitor2">
 
                 </div>
-                <div id="inventory">
-                    <div class="inventory-item" data-tool="">
+                <div id="lastInventory">
+                    <div class="lastInventory-items" data-tool="">
                     </div>
-                    <div class="inventory-item" data-tool="">
+                    <div class="lastInventory-items" data-tool="">
                     </div>
-                    <div class="inventory-item" data-tool="">
+                    <div class="lastInventory-items" data-tool="">
                     </div>
-                    <div class="inventory-item" data-tool="">
+                    <div class="lastInventory-items" data-tool="">
                     </div>
                 </div>
             </div>
@@ -504,7 +504,7 @@
         let arrow = document.querySelector(".arrow");
 
         /*Section 3, 4, 5, 7 - text with tips*/
-        let tips = document.querySelector("h3");
+        let tips = document.querySelectorAll("h3");
 
         /* Sounds */
         let buttonSound1 = new Audio('sounds/mixkit-retro-arcade-casino-notification-211.wav');
@@ -598,6 +598,8 @@
 
         /* Section12 */
         let monitor2 = document.querySelector(".monitor2");
+        let lastInventory = document.querySelector("#lastInventory");
+        let lastInventory_items = document.querySelectorAll(".lastInventory-items");
 
 
         /* Section 1 -> Section 2 */
@@ -1121,7 +1123,7 @@
         let placePillow1;
         let placePillow2;
         let placeCDs;
-        let curentItem1 = 0;
+        let currentItem1 = 0;
         pillow1.addEventListener("click", () => {
             buttonSound3.play()
 
@@ -1131,7 +1133,7 @@
             }
 
             inventoryItems[placePillow1].innerHTML = `<img src="img/pillow1.png" alt="pillow" width="56px">`;
-            inventoryItems[placeHeadphones].setAttribute("data-tool", "headphones");
+            inventoryItems[placePillow1].setAttribute("data-tool", "pillow1");
             pillow1.classList.add("disappeared");
             clickPillow1 = true;
             tips.innerHTML = "Keep searching!";
@@ -1147,7 +1149,7 @@
             }
 
             inventoryItems[placePillow2].innerHTML = `<img src="img/pillow2.png" alt="pillow" width="56px">`;
-            inventoryItems[placeHeadphones].setAttribute("data-tool", "headphones");
+            inventoryItems[placePillow2].setAttribute("data-tool", "pillow2");
             pillow2.classList.add("disappeared");
             clickPillow2 = true;
             tips.innerHTML = "Keep searching!";
@@ -1162,8 +1164,8 @@
                 currentItem1++;
             }
 
-            inventoryItems[placeCDs].innerHTML = `<img src="img/cds.png" alt="pillow" width="56px">`;
-            inventoryItems[placeHeadphones].setAttribute("data-tool", "headphones");
+            inventoryItems[placeCDs].innerHTML = `<img src="img/cds.png" alt="cds" width="56px">`;
+            inventoryItems[placeCDs].setAttribute("data-tool", "cds");
             cds.classList.add("disappeared");
             clickCDs = true;
             tips.innerHTML = "Keep searching!";

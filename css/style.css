@@ -1316,3 +1316,37 @@ h4:hover {
         top: 0px;
     }
 }
+
+
+/*  Section 12 */
+
+.monitor2 {
+    top: 158px;
+    left: 237px;
+    width: 107px;
+}
+
+#lastInventory {
+    height: 70px;
+    width: 260px;
+    background-color: black;
+    border-radius: 15px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-between;
+    margin: auto;
+    z-index: 2;
+}
+
+.lastInventory-items {
+    width: 64px;
+    height: 64px;
+    background-color: whitesmoke;
+    background-size: contain;
+    margin: auto;
+    border: 3px solid #6BEEFF;
+    border-radius: 10px;
+    position: relative;
+}
