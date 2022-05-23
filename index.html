@@ -20,7 +20,7 @@
     <div id="container">
 
         <!-- enter game -->
-        <section id="section1" class="disappeared">
+        <section id="section1">
             <img src="img/6_generated.jpg" alt="" width="660">
             <div class="button">START</div>
         </section>
@@ -430,33 +430,22 @@
         </section>
 
         <!-- back in the room where pillows, cds, ... and the key, are available -->
-        <section id="section12" class="">
+        <section id="section12" class="disappeared">
             <div class="room1" class="sections">
                 <img src="img/roomFinal.png" alt="room" width="960px">
                 <div class=things>
                     <h3 class="tip">Find the key.</h3>
-
-                    <img src="img/chair.png" alt="chair" class="chair">
-                    <img src="img/cds.png" alt="cds" class="cds">
-                    <img src="img/cup.png" alt="cup" class="cup">
-                    <img src="img/drawings.png" alt="drawings" class="drawings">
-                    <img src="img/headphones.png" alt="headphones" class="headphones">
-                    <img src="img/microphone.png" alt="microphone" class="mic">
-                    <img src="img/motivatieText.png" alt="text" class="motivationText">
-                    <img src="img/lamp.png" alt="lamp" class="lamp">
-                    <img src="img/posters.png" alt="poster" class="posters">
-                    <img src="img/trophy.png" alt="trophy" class="trophy">
-                    <img src="img/bookcase2.png" alt="" class="bookcase">
-                    <img src="img/pillow1.png" alt="" class="pillow1">
-                    <img src="img/pillow2.png" alt="" class="pillow2">
-                    <img src="img/books.png" alt="" class="books">
-                    <img src="img/frame.png" alt="" class="frame">
-                    <img src="img/mouse.png" alt="" class="mouse">
-                    <img src="img/videoGlasses.png" alt="virtual reality glasses" class="virtualRealityGlasses">
-                    <img src="img/speakers.png" alt="speakers" class="speakers">
-                    <img src="img/monitor.png" alt="monitor" class="monitor2">
                     <img src="img/key.png" alt="key" class="key">
                     <img src="img/blanket.png" alt="blanket" class="blanket">
+
+                    <img src="img/cds.png" alt="cds" class="cds">
+
+                    <img src="img/pillow1.png" alt="" class="pillow1">
+                    <img src="img/pillow2.png" alt="" class="pillow2">
+
+                    <img src="img/monitor.png" alt="monitor" class="monitor2">
+
+
                 </div>
                 <div id="lastInventory">
                     <div class="lastInventory-items" data-tool="">
@@ -527,9 +516,9 @@
         let monitor1 = document.querySelector(".monitor1");
         let monitor = document.querySelector(".monitor");
         let vrGlasses = document.querySelector(".virtualRealityGlasses");
-        let pillow1 = document.querySelector(".pillow1");
-        let pillow2 = document.querySelector(".pillow2");
-        let cds = document.querySelector(".cds");
+        let pillow1 = document.querySelectorAll(".pillow1");
+        let pillow2 = document.querySelectorAll(".pillow2");
+        let cds = document.querySelectorAll(".cds");
 
         /* inventory */
         let inventory = document.querySelector("#inventory");
@@ -602,7 +591,7 @@
         let monitor2 = document.querySelector(".monitor2");
         let lastInventory = document.querySelector("#lastInventory");
         let lastInventory_items = document.querySelectorAll(".lastInventory-items");
-
+        let blanket = document.querySelector(".blanket");
 
         /* Section 1 -> Section 2 */
         button.addEventListener('click', () => {
@@ -660,8 +649,8 @@
             inventoryItems[placeChair].setAttribute("data-tool", "chair");
             chair.classList.add("disappeared");
             clickChair = true;
-            tips.innerHTML = "So good to sit down, don't you think?"
-            tips.classList.add("tip")
+            tips.innerHTML = "So good to sit down, don't you think?";
+            tips.classList.add("tip");
         });
 
         vrGlasses.addEventListener("click", () => {
@@ -1115,64 +1104,81 @@
 
         /* Section 12 */
         monitor2.addEventListener('click', () => {
-            section12.classList.add("disappeared")
             section10.classList.remove("disappeared");
+            section12.classList.add("disappeared");
         })
 
         let clickPillow1 = false;
         let clickPillow2 = false;
         let clickCDs = false;
-
+        let clickBlanket = false;
         let placePillow1;
         let placePillow2;
         let placeCDs;
+        let placeBlanket;
+
         let currentItem1 = 0;
-        pillow1.addEventListener("click", () => {
+        pillow1[1].addEventListener("click", () => {
             buttonSound3.play()
 
             if (!clickPillow1) {
-                placePillow1 = currentItem;
+                placePillow1 = currentItem1;
                 currentItem1++;
             }
 
             inventoryItems[placePillow1].innerHTML = `<img src="img/pillow1.png" alt="pillow" width="56px">`;
             inventoryItems[placePillow1].setAttribute("data-tool", "pillow1");
-            pillow1.classList.add("disappeared");
+            pillow1[1].classList.add("disappeared");
             clickPillow1 = true;
             tips.innerHTML = "Keep searching!";
             tips.classList.add("tip");
         });
 
-        pillow2.addEventListener("click", () => {
+        pillow2[1].addEventListener("click", () => {
             buttonSound3.play()
 
             if (!clickPillow2) {
-                placePillow2 = currentItem;
+                placePillow2 = currentItem1;
                 currentItem1++;
             }
 
             inventoryItems[placePillow2].innerHTML = `<img src="img/pillow2.png" alt="pillow" width="56px">`;
             inventoryItems[placePillow2].setAttribute("data-tool", "pillow2");
-            pillow2.classList.add("disappeared");
+            pillow2[1].classList.add("disappeared");
             clickPillow2 = true;
-            tips.innerHTML = "Keep searching!";
-            tips.classList.add("tip");
+            tips[1].innerHTML = "Keep searching!";
+            tips[1].classList.add("tip");
         });
 
-        cds.addEventListener("click", () => {
+        cds[1].addEventListener("click", () => {
             buttonSound3.play()
 
             if (!clickCDs) {
-                placeCDs = currentItem;
+                placeCDs = currentItem1;
                 currentItem1++;
             }
 
             inventoryItems[placeCDs].innerHTML = `<img src="img/cds.png" alt="cds" width="56px">`;
             inventoryItems[placeCDs].setAttribute("data-tool", "cds");
-            cds.classList.add("disappeared");
+            cds[1].classList.add("disappeared");
             clickCDs = true;
-            tips.innerHTML = "Keep searching!";
-            tips.classList.add("tip");
+            tips[1].innerHTML = "Keep searching!";
+            tips[1].classList.add("tip");
+        });
+
+        blanket.addEventListener("click", () => {
+            buttonSound3.play()
+
+            if (!clickBlanket) {
+                placeBlanket = currentItem1;
+                currentItem1++;
+            }
+
+            inventoryItems[placeBlanket].innerHTML = `<img src="img/blanket.png" alt="cds" width="56px">`;
+            inventoryItems[placeBlanket].setAttribute("data-tool", "blanket");
+            blanket.classList.add("disappeared");
+            clickBlanket = true;
+
         });
     </script>
 </body>

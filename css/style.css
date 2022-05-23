@@ -1285,6 +1285,19 @@ h4:hover {
     animation: mySentences 14s linear;
 }
 
+.disappeared .mySentence {
+    animation: initial;
+}
+
+@keyframes mySentences {
+    from {
+        top: 230px;
+    }
+    to {
+        top: 0px;
+    }
+}
+
 .momSentence {
     padding: 10px;
     background-color: rgb(186, 186, 186);
@@ -1297,15 +1310,6 @@ h4:hover {
     left: 56px;
     visibility: hidden;
     animation: momsSentences 14s linear;
-}
-
-@keyframes mySentences {
-    from {
-        top: 230px;
-    }
-    to {
-        top: 0px;
-    }
 }
 
 @keyframes momsSentences {
@@ -1357,8 +1361,12 @@ h4:hover {
     width: 20px;
 }
 
+.show-key {
+    cursor: url(https://placekitten.com/50/50) 0 0, auto;
+}
+
 .blanket {
     top: 280px;
     left: 597px;
-    transform: scale(0.7);
+    transform: rotate(-1deg) scale(0.7);
 }
