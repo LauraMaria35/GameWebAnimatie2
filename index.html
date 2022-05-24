@@ -20,7 +20,7 @@
     <div id="container">
 
         <!-- enter game -->
-        <section id="section1">
+        <section id="section1" class="disappeared">
             <img src="img/6_generated.jpg" alt="" width="660">
             <div class="button">START</div>
         </section>
@@ -430,7 +430,7 @@
         </section>
 
         <!-- back in the room where pillows, cds, ... and the key, are available -->
-        <section id="section12" class="disappeared">
+        <section id="section12">
             <div class="room1" class="sections">
                 <img src="img/roomFinal.png" alt="room" width="960px">
                 <div class=things>
@@ -592,6 +592,7 @@
         let lastInventory = document.querySelector("#lastInventory");
         let lastInventory_items = document.querySelectorAll(".lastInventory-items");
         let blanket = document.querySelector(".blanket");
+        let key = document.querySelector(".key");
 
         /* Section 1 -> Section 2 */
         button.addEventListener('click', () => {
@@ -1112,6 +1113,7 @@
         let clickPillow2 = false;
         let clickCDs = false;
         let clickBlanket = false;
+        let clickKey = false;
         let placePillow1;
         let placePillow2;
         let placeCDs;
@@ -1162,8 +1164,8 @@
             inventoryItems[placeCDs].setAttribute("data-tool", "cds");
             cds[1].classList.add("disappeared");
             clickCDs = true;
-            tips[1].innerHTML = "Keep searching!";
-            tips[1].classList.add("tip");
+            tips.innerHTML = "Keep searching!";
+            tips.classList.add("tip");
         });
 
         blanket.addEventListener("click", () => {
@@ -1174,6 +1176,16 @@
                 currentItem1++;
             }
 
+            inventoryItems[placeBlanket].innerHTML = `<img src="img/blanket.png" alt="cds" width="56px">`;
+            inventoryItems[placeBlanket].setAttribute("data-tool", "blanket");
+            blanket.classList.add("disappeared");
+            clickBlanket = true;
+
+        });
+
+        key.addEventListener("click", () => {
+            buttonSound3.play()
+            section12.classList.add("show-key");
             inventoryItems[placeBlanket].innerHTML = `<img src="img/blanket.png" alt="cds" width="56px">`;
             inventoryItems[placeBlanket].setAttribute("data-tool", "blanket");
             blanket.classList.add("disappeared");
