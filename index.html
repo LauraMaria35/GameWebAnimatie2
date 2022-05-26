@@ -20,7 +20,7 @@
     <div id="container">
 
         <!-- enter game -->
-        <section id="section1">
+        <section id="section1" class="disappeared">
             <img src="img/6_generated.jpg" alt="" width="660">
             <div class="button">START</div>
         </section>
@@ -297,7 +297,7 @@
         </section>
 
         <!-- folder and chat icons are available -->
-        <section id="section10" class="disappeared">
+        <section id="section10">
             <div class="room1" class="sections">
                 <img src="img/vecteezy_grid-room-in-perspective-vector-illustration-in-3d-style_6471587.jpg" alt="virtual reality room" width="960px" height="540px">
                 <div class="things">
@@ -872,6 +872,7 @@
                     evt.target.style.transition = '0.2s';
                     evt.target.style.transform = "translateY(10%)";
 
+
                     if (count > 1) {
                         counterDisplayElem.innerHTML = "Total: " + count + " points";
 
@@ -1079,10 +1080,10 @@
 
             for (let i = 0; i < mySentence.length; i++) {
 
-                mySentence[0].style.animationDelay = 6 + "s";
-                mySentence[1].style.animationDelay = 16 + "s";
-                mySentence[2].style.animationDelay = 28 + "s";
-                mySentence[3].style.animationDelay = 40 + "s";
+                mySentence[0].style.animationDelay = 3 + "s";
+                mySentence[1].style.animationDelay = 13 + "s";
+                mySentence[2].style.animationDelay = 25 + "s";
+                mySentence[3].style.animationDelay = 37 + "s";
 
                 if (mySentence[i].style.top <= 40 + "px") {
                     mySentence[i].style.visibility = "visible";
@@ -1097,10 +1098,10 @@
             }
             for (let i = 0; i < momSentence.length; i++) {
 
-                momSentence[0].style.animationDelay = 11 + "s";
-                momSentence[1].style.animationDelay = 23 + "s";
-                momSentence[2].style.animationDelay = 33 + "s";
-                momSentence[3].style.animationDelay = 45 + "s";
+                momSentence[0].style.animationDelay = 10 + "s";
+                momSentence[1].style.animationDelay = 20 + "s";
+                momSentence[2].style.animationDelay = 30 + "s";
+                momSentence[3].style.animationDelay = 42 + "s";
 
                 if (momSentence[i].style.top <= 100 + "px") {
                     momSentence[i].style.visibility = "visible";
