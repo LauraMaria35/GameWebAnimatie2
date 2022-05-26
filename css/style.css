@@ -1353,6 +1353,7 @@ h4:hover {
     border: 3px solid #6BEEFF;
     border-radius: 10px;
     position: relative;
+    padding-top: 15px;
 }
 
 .key {
@@ -1379,4 +1380,14 @@ h4:hover {
     position: absolute;
     top: 235px;
     left: 25px;
+}
+
+.thingsSection12 img {
+    display: block;
+    position: absolute;
+}
+
+.thingsSection12 p {
+    display: block;
+    position: absolute;
 }

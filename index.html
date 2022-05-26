@@ -433,7 +433,7 @@
             <div class="room1" class="sections">
                 <img src="img/roomFinal.png" alt="room" width="960px">
                 <div id="doorzichtigeKnop"></div>
-                <div class=things>
+                <div class=thingsSection12>
                     <h3 class="tip1">Find the key.</h3>
                     <img src="img/key.png" alt="key" class="key">
                     <img src="img/blanket.png" alt="blanket" class="blanket">
@@ -444,8 +444,6 @@
                     <img src="img/pillow2.png" alt="" class="pillow2">
 
                     <img src="img/monitor.png" alt="monitor" class="monitor2">
-
-
                 </div>
                 <div id="lastInventory">
                     <div class="lastInventory-items" data-tool="">
@@ -463,7 +461,9 @@
         <section id="section12-1" class="disappeared">
             <div class="room1" class="sections">
                 <img src="img/doorOpened.png" alt="room">
-
+                <div class=thingsSection12>
+                    <h3 class="tip1">Congratulation! You can leave the room now.</h3>
+                </div>
             </div>
         </section>
 
@@ -518,7 +518,7 @@
         let keySound1 = new Audio('sounds/mixkit-keys-moving-1558.wav');
         let keySound2 = new Audio('sounds/mixkit-door-key-in-door-lock-2842.wav');
 
-        /* Things in the room */
+        /* Section 3 (Things in the room) */
         let things = document.querySelector("#things");
         let headphones = document.querySelector(".headphones");
         let chair = document.querySelector(".chair");
@@ -603,7 +603,7 @@
         let lastInventory_items = document.querySelectorAll(".lastInventory-items");
         let blanket = document.querySelector(".blanket");
         let key = document.querySelector(".key");
-        let lastTips = document.querySelector(".tip1")
+        let lastTips = document.querySelectorAll(".tip1")
 
         /* Section 1 -> Section 2 */
         button.addEventListener('click', () => {
@@ -1129,7 +1129,7 @@
         let placePillow2;
         let placeCDs;
         let placeBlanket;
-        lastTips.classList.add("tip");
+        lastTips[0].classList.add("tip");
 
         let currentItem1 = 0;
         pillow1[1].addEventListener("click", () => {
@@ -1140,8 +1140,8 @@
                 currentItem1++;
             }
 
-            inventoryItems[placePillow1].innerHTML = `<img src="img/pillow1.png" alt="pillow" width="56px">`;
-            inventoryItems[placePillow1].setAttribute("data-tool", "pillow1");
+            lastInventory_items[placePillow1].innerHTML = `<img src="img/pillow1.png" alt="pillow" width="56px">`;
+            lastInventory_items[placePillow1].setAttribute("data-tool", "pillow1");
             pillow1[1].classList.add("disappeared");
             clickPillow1 = true;
             lastTips.innerHTML = "Keep searching!";
@@ -1156,8 +1156,8 @@
                 currentItem1++;
             }
 
-            inventoryItems[placePillow2].innerHTML = `<img src="img/pillow2.png" alt="pillow" width="56px">`;
-            inventoryItems[placePillow2].setAttribute("data-tool", "pillow2");
+            lastInventory_items[placePillow2].innerHTML = `<img src="img/pillow2.png" alt="pillow" width="56px">`;
+            lastInventory_items[placePillow2].setAttribute("data-tool", "pillow2");
             pillow2[1].classList.add("disappeared");
             clickPillow2 = true;
             lastTips.innerHTML = "You are getting close!";
@@ -1172,8 +1172,8 @@
                 currentItem1++;
             }
 
-            inventoryItems[placeCDs].innerHTML = `<img src="img/cds.png" alt="cds" width="56px">`;
-            inventoryItems[placeCDs].setAttribute("data-tool", "cds");
+            lastInventory_items[placeCDs].innerHTML = `<img src="img/cds.png" alt="cds" width="56px">`;
+            lastInventory_items[placeCDs].setAttribute("data-tool", "cds");
             cds[1].classList.add("disappeared");
             clickCDs = true;
             lastTips.innerHTML = "Keep searching!";
@@ -1188,8 +1188,8 @@
                 currentItem1++;
             }
 
-            inventoryItems[placeBlanket].innerHTML = `<img src="img/blanket.png" alt="cds" width="56px">`;
-            inventoryItems[placeBlanket].setAttribute("data-tool", "blanket");
+            lastInventory_items[placeBlanket].innerHTML = `<img src="img/blanket.png" alt="cds" width="56px">`;
+            lastInventory_items[placeBlanket].setAttribute("data-tool", "blanket");
             blanket.classList.add("disappeared");
             clickBlanket = true;
             lastTips.innerHTML = "Nice!";
@@ -1200,7 +1200,7 @@
             key.classList.add("disappeared");
             clickKey = true;
             keySound1.play();
-            lastTips.innerHTML = "Now you can open the door!";
+            lastTips[0].innerHTML = "Now you can open the door!";
         });
 
         doorzichtigeKnop = document.querySelector("#doorzichtigeKnop");
@@ -1210,7 +1210,7 @@
         function togeelGevonden() {
             section12.classList.add("disappeared");
             section12_1.classList.remove("disappeared");
-
+            lastTips[1].classList.add("tip");
         }
     </script>
 </body>
