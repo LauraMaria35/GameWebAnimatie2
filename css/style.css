@@ -1362,11 +1362,21 @@ h4:hover {
 }
 
 .show-key {
-    cursor: url(../img/key.png) 0 0, auto;
+    cursor: url(../img/key1.png) 0 0, auto;
 }
 
 .blanket {
     top: 280px;
     left: 597px;
     transform: rotate(-1deg) scale(0.7);
+}
+
+#doorzichtigeKnop {
+    background-color: blue;
+    opacity: 0.5;
+    width: 20px;
+    height: 40px;
+    position: absolute;
+    top: 235px;
+    left: 25px;
 }

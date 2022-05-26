@@ -424,7 +424,6 @@
                     </div>
                 </div>
 
-
             </div>
 
         </section>
@@ -433,8 +432,9 @@
         <section id="section12">
             <div class="room1" class="sections">
                 <img src="img/roomFinal.png" alt="room" width="960px">
+                <div id="doorzichtigeKnop"></div>
                 <div class=things>
-                    <h3 class="tip">Find the key.</h3>
+                    <h3 class="tip1">Find the key.</h3>
                     <img src="img/key.png" alt="key" class="key">
                     <img src="img/blanket.png" alt="blanket" class="blanket">
 
@@ -457,6 +457,13 @@
                     <div class="lastInventory-items" data-tool="">
                     </div>
                 </div>
+            </div>
+        </section>
+
+        <section id="section12-1" class="disappeared">
+            <div class="room1" class="sections">
+                <img src="img/doorOpened.png" alt="room">
+
             </div>
         </section>
 
@@ -487,6 +494,7 @@
         let section11 = document.querySelector("#section11");
         let section11_1 = document.querySelector("#section11-1");
         let section12 = document.querySelector("#section12");
+        let section12_1 = document.querySelector("#section12-1");
 
         /*Section 1*/
         let button = document.querySelector(".button");
@@ -507,6 +515,8 @@
         let music3 = new Audio('sounds/the-rhythm-of-the-africa-wav-8837.mp3');
         let meerkatSound = new Audio('sounds/Meerkat1.mp3');
         let music4 = new Audio('sounds/music4.mp3');
+        let keySound1 = new Audio('sounds/mixkit-keys-moving-1558.wav');
+        let keySound2 = new Audio('sounds/mixkit-door-key-in-door-lock-2842.wav');
 
         /* Things in the room */
         let things = document.querySelector("#things");
@@ -593,6 +603,7 @@
         let lastInventory_items = document.querySelectorAll(".lastInventory-items");
         let blanket = document.querySelector(".blanket");
         let key = document.querySelector(".key");
+        let lastTips = document.querySelector(".tip1")
 
         /* Section 1 -> Section 2 */
         button.addEventListener('click', () => {
@@ -1118,6 +1129,7 @@
         let placePillow2;
         let placeCDs;
         let placeBlanket;
+        lastTips.classList.add("tip");
 
         let currentItem1 = 0;
         pillow1[1].addEventListener("click", () => {
@@ -1132,8 +1144,8 @@
             inventoryItems[placePillow1].setAttribute("data-tool", "pillow1");
             pillow1[1].classList.add("disappeared");
             clickPillow1 = true;
-            tips.innerHTML = "Keep searching!";
-            tips.classList.add("tip");
+            lastTips.innerHTML = "Keep searching!";
+
         });
 
         pillow2[1].addEventListener("click", () => {
@@ -1148,8 +1160,8 @@
             inventoryItems[placePillow2].setAttribute("data-tool", "pillow2");
             pillow2[1].classList.add("disappeared");
             clickPillow2 = true;
-            tips[1].innerHTML = "Keep searching!";
-            tips[1].classList.add("tip");
+            lastTips.innerHTML = "You are getting close!";
+
         });
 
         cds[1].addEventListener("click", () => {
@@ -1164,8 +1176,8 @@
             inventoryItems[placeCDs].setAttribute("data-tool", "cds");
             cds[1].classList.add("disappeared");
             clickCDs = true;
-            tips.innerHTML = "Keep searching!";
-            tips.classList.add("tip");
+            lastTips.innerHTML = "Keep searching!";
+
         });
 
         blanket.addEventListener("click", () => {
@@ -1180,18 +1192,26 @@
             inventoryItems[placeBlanket].setAttribute("data-tool", "blanket");
             blanket.classList.add("disappeared");
             clickBlanket = true;
-
+            lastTips.innerHTML = "Nice!";
         });
 
         key.addEventListener("click", () => {
-            buttonSound3.play()
             section12.classList.add("show-key");
-            inventoryItems[placeBlanket].innerHTML = `<img src="img/blanket.png" alt="cds" width="56px">`;
-            inventoryItems[placeBlanket].setAttribute("data-tool", "blanket");
-            blanket.classList.add("disappeared");
-            clickBlanket = true;
-
+            key.classList.add("disappeared");
+            clickKey = true;
+            keySound1.play();
+            lastTips.innerHTML = "Now you can open the door!";
         });
+
+        doorzichtigeKnop = document.querySelector("#doorzichtigeKnop");
+
+        doorzichtigeKnop.addEventListener('click', togeelGevonden);
+
+        function togeelGevonden() {
+            section12.classList.add("disappeared");
+            section12_1.classList.remove("disappeared");
+
+        }
     </script>
 </body>
 
