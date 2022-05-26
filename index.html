@@ -20,7 +20,7 @@
     <div id="container">
 
         <!-- enter game -->
-        <section id="section1" class="disappeared">
+        <section id="section1">
             <img src="img/6_generated.jpg" alt="" width="660">
             <div class="button">START</div>
         </section>
@@ -136,16 +136,16 @@
                     <img src="img/Desert.png" alt="desert" width="960px" height="540px">
                     <h3 class="tip">Catch the meerkats!</h3>
 
-                    <img class="clouds" src="img/clouds.png" alt="">
+                    <img class="clouds" src="img/clouds.png" alt="clouds">
                     <img class="tree" src="img/tree.png" alt="tree">
                     <div><img id="meerkat1" class="meerkat" data-punten="2" src="img/Meerkat1.png" alt="meerkat1"></div>
                     <div><img id="meerkat2" class="meerkat" data-punten="2" src="img/Meerkat2.png" alt="meerkat2"></div>
                     <div><img id="meerkat3" class="meerkat" data-punten="5" src="img/Meerkat3.png" alt="meerkat3"></div>
                     <div><img id="meerkat4" class="meerkat" data-punten="5" src="img/Meerkat4.png" alt="meerkat4"></div>
                     <div><img id="meerkat5" class="meerkat" data-punten="1" src="img/Meerkat5.png" alt="meerkat5"></div>
-
                     <div><img id="meerkat8" class="meerkat" data-punten="2" src="img/Meerkat8.png" alt="meerkat8"></div>
                     <div><img id="meerkat9" class="meerkat" data-punten="1" src="img/Meerkat9.png" alt="meerkat9"></div>
+
                     <div><img src="img/Asset 3.png" alt="" id="hideout1"></div>
                     <div><img src="img/Asset 4.png" alt="" id="hideout2"></div>
                     <div><img src="img/Asset 5.png" alt="" id="hideout3"></div>
@@ -429,7 +429,7 @@
         </section>
 
         <!-- back in the room where pillows, cds, ... and the key, are available -->
-        <section id="section12">
+        <section id="section12" class="disappeared">
             <div class="room1" class="sections">
                 <img src="img/roomFinal.png" alt="room" width="960px">
                 <div id="doorzichtigeKnop"></div>
@@ -467,6 +467,14 @@
             </div>
         </section>
 
+        <!-- game finished -->
+        <section id="section13" class="disappeared">
+            <img src="img/80_generated.jpg" alt="" width="660">
+            <img src="img/trophy1.png" alt="trophy" id="endTrophy" width="140">
+            <img src="img/startAgain.png" alt="start" id="startAgain">
+
+        </section>
+
     </div>
 
     <script>
@@ -495,6 +503,7 @@
         let section11_1 = document.querySelector("#section11-1");
         let section12 = document.querySelector("#section12");
         let section12_1 = document.querySelector("#section12-1");
+        let section13 = document.querySelector("#section13");
 
         /*Section 1*/
         let button = document.querySelector(".button");
@@ -603,7 +612,10 @@
         let lastInventory_items = document.querySelectorAll(".lastInventory-items");
         let blanket = document.querySelector(".blanket");
         let key = document.querySelector(".key");
-        let lastTips = document.querySelectorAll(".tip1")
+        let lastTips = document.querySelectorAll(".tip1");
+
+        /* Section 13 */
+        let startAgain = document.querySelector("#startAgain");
 
         /* Section 1 -> Section 2 */
         button.addEventListener('click', () => {
@@ -645,8 +657,8 @@
             inventoryItems[placeHeadphones].setAttribute("data-tool", "headphones");
             headphones.classList.add("disappeared");
             clickHeadphones = true;
-            tips.innerHTML = "Good, you found the headphones!"
-            tips.classList.add("tip");
+            tips[0].innerHTML = "Good, you found the headphones!"
+            tips[0].classList.add("tip");
         });
 
         chair.addEventListener("click", () => {
@@ -661,8 +673,8 @@
             inventoryItems[placeChair].setAttribute("data-tool", "chair");
             chair.classList.add("disappeared");
             clickChair = true;
-            tips.innerHTML = "So good to sit down, don't you think?";
-            tips.classList.add("tip");
+            tips[0].innerHTML = "So good to sit down, don't you think?";
+            tips[0].classList.add("tip");
         });
 
         vrGlasses.addEventListener("click", () => {
@@ -679,8 +691,8 @@
 
             vrGlasses.classList.add("disappeared");
             clickVRGlasses = true;
-            tips.innerHTML = "Nice, you found the virtual reality glasses!"
-            tips.classList.add("tip");
+            tips[0].innerHTML = "Nice, you found the virtual reality glasses!"
+            tips[0].classList.add("tip");
         });
 
         mouse.addEventListener("click", () => {
@@ -697,7 +709,7 @@
             inventoryItems[placeMouse].setAttribute("data-tool", "mouse");
             inventoryItems[placeMouse].style.paddingTop = "23px";
             monitor1.style.display = "none";
-            tips.innerHTML = "Very good!";
+            tips[0].innerHTML = "Very good!";
 
             if (clickMouse && (clickHeadphones && clickChair && clickVRGlasses)) {
                 tips.innerHTML = "Now click on the monitor screen.";
@@ -710,7 +722,7 @@
 
             if (!clickMonitor && (clickHeadphones && clickChair && clickVRGlasses)) {
                 clickMonitor = true;
-                tips.innerHTML = "Let's start!";
+                tips[0].innerHTML = "Let's start!";
 
                 // enter in the virtual world
                 monitor.style.animation = "turnOnDesktop 4s linear 0.3s calc(1)";
@@ -727,18 +739,18 @@
                 }, delayInMilliseconds);
 
             } else if (!clickMonitor && (clickHeadphones && clickChair && !clickVRGlasses)) {
-                tips.innerHTML = "Pick first the virtual reality glasses!";
+                tips[0].innerHTML = "Pick first the virtual reality glasses!";
 
             } else if (!clickMonitor && (clickHeadphones && !clickChair && clickVRGlasses)) {
-                tips.innerHTML = "Relax and sit down on the chair."
+                tips[0].innerHTML = "Relax and sit down on the chair."
 
 
             } else if (!clickMonitor && (!clickHeadphones && clickChair && clickVRGlasses)) {
-                tips.innerHTML = "Pick first the headphones!"
+                tips[0].innerHTML = "Pick first the headphones!"
 
 
             } else if (!clickMonitor && clickMouse && (clickHeadphones || (clickChair || clickVRGlasses))) {
-                tips.innerHTML = "You have two more items to find.";
+                tips[0].innerHTML = "You have two more items to find.";
 
             } else {
                 clickMonitor = true;
@@ -856,7 +868,9 @@
 
                     counterDisplayElem.innerHTML = count;
                     count += parseInt(puntenGeraakte);
-                    evt.target.style.backgroundColor = 'brown';
+                    evt.target.style.width = '0px';
+                    evt.target.style.transition = '0.2s';
+                    evt.target.style.transform = "translateY(10%)";
 
                     if (count > 1) {
                         counterDisplayElem.innerHTML = "Total: " + count + " points";
@@ -872,14 +886,17 @@
                         tekst.innerHTML = "You accumulated " + puntenGeraakte + " points.";
                         meerkatSound.play();
                     }
+
                 }
 
                 function resetMeerkat(evt) {
-                    console.log('animation restarted')
-                    evt.target.style.backgroundColor = '';
+                    console.log('animation restarted');
+                    evt.target.style.width = '';
+                    evt.target.style.transform = "translateY(0%)";
                 }
             }
-        })
+
+        });
         let game2played = false;
         /* Exit games window */
         exitButton.addEventListener('click', () => {
@@ -1144,7 +1161,7 @@
             lastInventory_items[placePillow1].setAttribute("data-tool", "pillow1");
             pillow1[1].classList.add("disappeared");
             clickPillow1 = true;
-            lastTips.innerHTML = "Keep searching!";
+            lastTips[0].innerHTML = "Keep searching!";
 
         });
 
@@ -1160,7 +1177,7 @@
             lastInventory_items[placePillow2].setAttribute("data-tool", "pillow2");
             pillow2[1].classList.add("disappeared");
             clickPillow2 = true;
-            lastTips.innerHTML = "You are getting close!";
+            lastTips[0].innerHTML = "You are getting close!";
 
         });
 
@@ -1176,7 +1193,7 @@
             lastInventory_items[placeCDs].setAttribute("data-tool", "cds");
             cds[1].classList.add("disappeared");
             clickCDs = true;
-            lastTips.innerHTML = "Keep searching!";
+            lastTips[0].innerHTML = "Keep searching!";
 
         });
 
@@ -1192,7 +1209,7 @@
             lastInventory_items[placeBlanket].setAttribute("data-tool", "blanket");
             blanket.classList.add("disappeared");
             clickBlanket = true;
-            lastTips.innerHTML = "Nice!";
+            lastTips[0].innerHTML = "Nice!";
         });
 
         key.addEventListener("click", () => {
@@ -1208,10 +1225,30 @@
         doorzichtigeKnop.addEventListener('click', togeelGevonden);
 
         function togeelGevonden() {
+            keySound2.play();
             section12.classList.add("disappeared");
             section12_1.classList.remove("disappeared");
             lastTips[1].classList.add("tip");
+
+            const myInterval = setInterval(myTimer, 1000);
+            let seconds = 0;
+
+            function myTimer() {
+                seconds++;
+                if (seconds == 3) {
+                    clearInterval(myInterval);
+                    section12_1.classList.add("disappeared");
+                    section13.classList.remove("disappeared");
+
+
+                }
+            }
         }
+
+        startAgain.addEventListener("click", () => {
+            section13.classList.add("disappeared");
+            section1.classList.remove("disappeared");
+        });
     </script>
 </body>
 

@@ -69,7 +69,8 @@ span {
 
 #section2,
 #section7_1,
-#section7_2 {
+#section7_2,
+#section13 {
     width: 960px;
     height: 540px;
     margin: 0 auto;
@@ -1390,4 +1391,20 @@ h4:hover {
 .thingsSection12 p {
     display: block;
     position: absolute;
+}
+
+#endTrophy {
+    margin-top: -640px;
+    margin-left: 410px;
+}
+
+#startAgain {
+    margin-top: 240px;
+    margin-left: 385px;
+    transition: 0.1s;
+}
+
+#startAgain:hover {
+    transform: scale(0.8);
+    transition: 0.1s;
 }
