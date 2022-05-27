@@ -12,7 +12,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cabin+Sketch&family=Rubik+Moonrocks&display=swap" rel="stylesheet">
-    <title>Eindopdracht</title>
+    <title>Eindopdracht WebAnimatie 2</title>
 </head>
 
 <body>
@@ -20,7 +20,7 @@
     <div id="container">
 
         <!-- enter game -->
-        <section id="section1" class="disappeared">
+        <section id="section1">
             <img src="img/6_generated.jpg" alt="" width="660">
             <div class="button">START</div>
         </section>
@@ -153,7 +153,6 @@
                     <div><img id="meerkat6" class="meerkat" data-punten="5" src="img/Meerkat6.png" alt="meerkat6"></div>
                     <div><img id="meerkat7" class="meerkat" data-punten="1" src="img/Meerkat7.png" alt="meerkat7"></div>
 
-
                     <h1 id="klok"></h1>
                     <div id="messageText"></div>
                     <div id="counter-display">0</div>
@@ -242,14 +241,10 @@
         <section id="section9" class="disappeared">
             <div class="room1" class="sections">
                 <img src="img/SearchGame.png" height="380">
-
                 <br>
                 <h2 class="secondGame">Congratulations! You've moved on to the next level. Good luck finding items!</h2>
-
                 <div class="enterGame2-2">Continue</div>
-
             </div>
-
         </section>
 
         <!-- playing the second level of the second virtual game -->
@@ -280,19 +275,15 @@
                     <div class="counter2"></div>
                 </div>
             </div>
-
         </section>
 
         <!-- finished second level -->
         <section id="section9-2" class="disappeared">
             <div class="room1" class="sections">
                 <img src="img/SearchGame.png" height="380">
-
                 <br>
                 <h2 class="secondGame">Congratulations, you found all the items! You receive a clue to help you find the key. The clue is: <span>chat</span>.</h2>
-
                 <h4 class="leaveGame">Exit Game</h4>
-
             </div>
         </section>
 
@@ -307,7 +298,6 @@
                     <img src="img/folder.png" alt="folder" class="folder">
                     <img src="img/chat.png" alt="chat" class="chat">
                     <img src="img/battery2.png" alt="battery" class="battery">
-
                 </div>
             </div>
 
@@ -326,7 +316,7 @@
             </div>
         </section>
 
-        <section id="section10-2">
+        <section id="section10-2" class="disappeared">
             <div class="room1" class="sections">
                 <img src="img/vecteezy_grid-room-in-perspective-vector-illustration-in-3d-style_6471587.jpg" alt="virtual reality room" width="960px" height="540px">
                 <div class="things">
@@ -336,7 +326,6 @@
                     <img src="img/battery3.png" alt="battery" class="battery">
                 </div>
             </div>
-
         </section>
 
         <!-- in the chat section -->
@@ -371,11 +360,8 @@
                         <div id="grandpa"><img src="img/grandpa.png" alt="grandpa" class="avatar"></div>
                     </div>
                     <p class="titleAvatar4">grandpa</p>
-
                 </div>
-
             </div>
-
         </section>
 
         <section id="section11-1" class="disappeared">
@@ -424,9 +410,7 @@
                         <img src="img/video.png" alt="video" id="video">
                     </div>
                 </div>
-
             </div>
-
         </section>
 
         <!-- back in the room where pillows, cds, ... and the key, are available -->
@@ -528,6 +512,11 @@
         let keySound1 = new Audio('sounds/mixkit-keys-moving-1558.wav');
         let keySound2 = new Audio('sounds/mixkit-door-key-in-door-lock-2842.wav');
         let lockedDoor = new Audio('sounds/12739__leady__locked-door.wav');
+        music1.volume = 0.1;
+        music2.volume = 0.1;
+        music3.volume = 0.1;
+        music4.volume = 0.1;
+        lockedDoor.volume = 0.5;
 
         /* Section 3 (Things in the room) */
         let things = document.querySelector("#things");
@@ -626,7 +615,7 @@
             section2.classList.remove("disappeared");
             buttonSound1.play();
             music1.play();
-            music1.volume = 0.2;
+
         });
 
         /* Section 2 -> Section 3 */
@@ -737,7 +726,7 @@
                     music1.pause();
                     section4.classList.remove("disappeared");
                     music2.play();
-                    music2.volume = 0.2;
+
 
                 }, delayInMilliseconds);
 
@@ -764,7 +753,7 @@
                 music1.pause();
                 section4.classList.remove("disappeared");
                 music2.play();
-                music2.volume = 0.2;
+
             }
         });
 
@@ -781,7 +770,7 @@
             section5.classList.add("disappeared");
             section6.classList.remove("disappeared");
             music3.play();
-            music3.volume = 0.2;
+
         });
 
         /* Section 6 -> Section 7 (Play Meerkats Game)*/
@@ -927,11 +916,9 @@
                 setTimeout(function() {
                     section3.classList.remove("disappeared");
                     music1.play();
-                    music1.volume = 0.2;
                     inventory.classList.remove("disappeared");
                 }, delayInMilliseconds);
             } else {
-
                 section4.classList.add("disappeared");
                 music2.pause();
                 music1.play();
@@ -939,7 +926,6 @@
                 setTimeout(function() {
                     section3.classList.remove("disappeared");
                     music1.play();
-                    music1.volume = 0.2;
                     inventory.classList.remove("disappeared");
                 }, delayInMilliseconds);
             }
@@ -954,7 +940,6 @@
                 setTimeout(function() {
                     section12.classList.remove("disappeared");
                     music1.play();
-                    music1.volume = 0.2;
                     inventory.classList.remove("disappeared");
                 }, delayInMilliseconds);
             } else {
@@ -962,12 +947,9 @@
                 setTimeout(function() {
                     section3.classList.remove("disappeared");
                     music1.play();
-                    music1.volume = 0.2;
                     inventory.classList.remove("disappeared");
                 }, delayInMilliseconds);
             }
-
-
         });
 
         exitComputer2.addEventListener('click', () => {
@@ -978,7 +960,6 @@
             setTimeout(function() {
                 section12.classList.remove("disappeared");
                 music1.play();
-                music1.volume = 0.2;
                 inventory.classList.remove("disappeared");
             }, delayInMilliseconds);
 
@@ -990,7 +971,6 @@
             section5.classList.add("disappeared");
             section8.classList.remove("disappeared");
             music4.play();
-            music4.volume = 0.2;
         });
 
         /* Play level1 (Section 8 -> Section 8-1) */
@@ -1257,6 +1237,7 @@
             section13.classList.add("disappeared");
             section1.classList.remove("disappeared");
             music1.pause();
+            window.location.href = "index.html";
         });
 
         exitGame.addEventListener("click", () => {
