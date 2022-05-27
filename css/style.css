@@ -1377,14 +1377,6 @@ h4:hover {
     transform: rotate(-1deg) scale(0.7);
 }
 
-#transparentButton {
-    width: 20px;
-    height: 40px;
-    position: absolute;
-    top: 235px;
-    left: 25px;
-}
-
 .thingsSection12 img {
     display: block;
     position: absolute;
@@ -1393,6 +1385,14 @@ h4:hover {
 .thingsSection12 p {
     display: block;
     position: absolute;
+}
+
+.transparentButton {
+    width: 20px;
+    height: 40px;
+    position: absolute;
+    top: 235px;
+    left: 25px;
 }
 
 
