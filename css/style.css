@@ -1283,7 +1283,7 @@ h4:hover {
     top: 430px;
     left: 315px;
     visibility: hidden;
-    animation: mySentences 14s linear;
+    animation: mySentences 12s linear;
 }
 
 .disappeared .mySentence {
@@ -1310,7 +1310,11 @@ h4:hover {
     top: 430px;
     left: 56px;
     visibility: hidden;
-    animation: momsSentences 14s linear;
+    animation: momsSentences 12s linear;
+}
+
+.disappeared .momSentence {
+    animation: initial;
 }
 
 @keyframes momsSentences {
@@ -1374,7 +1378,6 @@ h4:hover {
 }
 
 #doorzichtigeKnop {
-    background-color: blue;
     opacity: 0.5;
     width: 20px;
     height: 40px;

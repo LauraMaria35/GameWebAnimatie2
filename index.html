@@ -20,7 +20,7 @@
     <div id="container">
 
         <!-- enter game -->
-        <section id="section1" class="disappeared">
+        <section id="section1">
             <img src="img/6_generated.jpg" alt="" width="660">
             <div class="button">START</div>
         </section>
@@ -297,7 +297,7 @@
         </section>
 
         <!-- folder and chat icons are available -->
-        <section id="section10">
+        <section id="section10" class="disappeared">
             <div class="room1" class="sections">
                 <img src="img/vecteezy_grid-room-in-perspective-vector-illustration-in-3d-style_6471587.jpg" alt="virtual reality room" width="960px" height="540px">
                 <div class="things">
@@ -382,7 +382,7 @@
                 <img src="img/vecteezy_grid-room-in-perspective-vector-illustration-in-3d-style_6471587.jpg" alt="virtual reality room" width="960px" height="540px">
 
                 <div class="things">
-                    <img src="img/battery3.png" alt="" class="battery1">
+                    <img src="img/battery2.png" alt="" class="battery1">
                     <h3 class="tip"></h3>
                     <img src="img/window.png" alt="window" class="window1">
                     <div class="exitButton1">X</div>
@@ -1082,11 +1082,11 @@
             for (let i = 0; i < mySentence.length; i++) {
 
                 mySentence[0].style.animationDelay = 2 + "s";
-                mySentence[1].style.animationDelay = 13 + "s";
+                mySentence[1].style.animationDelay = 12 + "s";
                 mySentence[2].style.animationDelay = 27 + "s";
                 mySentence[3].style.animationDelay = 40 + "s";
 
-                if (mySentence[i].style.top <= 40 + "px") {
+                if (mySentence[i].style.top <= 20 + "px") {
                     mySentence[i].style.visibility = "visible";
 
                 }
@@ -1099,10 +1099,10 @@
             }
             for (let i = 0; i < momSentence.length; i++) {
 
-                momSentence[0].style.animationDelay = 10 + "s";
-                momSentence[1].style.animationDelay = 23 + "s";
-                momSentence[2].style.animationDelay = 35 + "s";
-                momSentence[3].style.animationDelay = 47 + "s";
+                momSentence[0].style.animationDelay = 8 + "s";
+                momSentence[1].style.animationDelay = 21 + "s";
+                momSentence[2].style.animationDelay = 33 + "s";
+                momSentence[3].style.animationDelay = 45 + "s";
 
                 if (momSentence[i].style.top <= 100 + "px") {
                     momSentence[i].style.visibility = "visible";
@@ -1226,24 +1226,30 @@
 
         doorzichtigeKnop.addEventListener('click', togeelGevonden);
 
-        function togeelGevonden() {
-            keySound2.play();
-            section12.classList.add("disappeared");
-            section12_1.classList.remove("disappeared");
-            lastTips[1].classList.add("tip");
+        if (clickKey) {
+            function togeelGevonden() {
+                keySound2.play();
+                section12.classList.add("disappeared");
+                section12_1.classList.remove("disappeared");
+                lastTips[1].classList.add("tip");
 
-            const myInterval = setInterval(myTimer, 1000);
-            let seconds = 0;
+                const myInterval = setInterval(myTimer, 1000);
+                let seconds = 0;
 
-            function myTimer() {
-                seconds++;
-                if (seconds == 3) {
-                    clearInterval(myInterval);
-                    section12_1.classList.add("disappeared");
-                    section13.classList.remove("disappeared");
+                function myTimer() {
+                    seconds++;
+                    if (seconds == 3) {
+                        clearInterval(myInterval);
+                        section12_1.classList.add("disappeared");
+                        section13.classList.remove("disappeared");
+                    }
                 }
             }
+        } else {
+            lastTips[1].innerHTML = "Find the key first."
+            lastTips[1].classList.add("tip");
         }
+
 
         startAgain.addEventListener("click", () => {
             section13.classList.add("disappeared");
@@ -1254,6 +1260,7 @@
         exitGame.addEventListener("click", () => {
             section13.classList.add("disappeared");
             music1.pause();
+            window.location.href = "https://lauraciocalau.com";
         });
     </script>
 </body>
