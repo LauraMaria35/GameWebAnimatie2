@@ -1377,7 +1377,7 @@ h4:hover {
     transform: rotate(-1deg) scale(0.7);
 }
 
-#doorzichtigeKnop {
+#transparentButton {
     opacity: 0.5;
     width: 20px;
     height: 40px;
@@ -1395,6 +1395,9 @@ h4:hover {
     display: block;
     position: absolute;
 }
+
+
+/* Section 13 */
 
 #endTrophy {
     margin-top: -640px;

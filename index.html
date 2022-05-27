@@ -879,7 +879,6 @@
                         tekst.innerHTML = "You accumulated " + puntenGeraakte + " points.";
                         meerkatSound.play();
                     }
-
                 }
 
                 function resetMeerkat(evt) {
@@ -890,7 +889,9 @@
             }
 
         });
+
         let game2played = false;
+
         /* Exit games window */
         exitButton.addEventListener('click', () => {
             section5.classList.add("disappeared");
@@ -1041,11 +1042,13 @@
             section8_1.classList.remove("disappeared");
 
         });
+
         /* Play level2 (Section 9 -> Section 9-1) */
         enterGame2_2.addEventListener("click", () => {
             section9.classList.add("disappeared");
             section9_1.classList.remove("disappeared");
         });
+
         /* Section 10 -> Section 11 (enter chat) */
         let chatted = false;
 
@@ -1115,7 +1118,7 @@
             section10_2.classList.remove("disappeared");
         })
 
-        /* Section 12 */
+        /* Section 10 -> Section 12 */
         monitor2.addEventListener('click', () => {
             section10.classList.remove("disappeared");
             section12.classList.add("disappeared");
@@ -1235,7 +1238,6 @@
 
 
         /* Section 13 (Game over)*/
-
         startAgain.addEventListener("click", () => {
             section13.classList.add("disappeared");
             section1.classList.remove("disappeared");
