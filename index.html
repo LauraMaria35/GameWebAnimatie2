@@ -417,7 +417,7 @@
         <section id="section12" class="disappeared">
             <div class="room1" class="sections">
                 <img src="img/roomFinal.png" alt="room" width="960px">
-                <div id="doorzichtigeKnop"></div>
+                <div id="transparentButton"></div>
                 <div class=thingsSection12>
                     <h3 class="tip1">Find the key.</h3>
                     <img src="img/key.png" alt="key" class="key">
@@ -1204,9 +1204,9 @@
             lastTips[0].innerHTML = "Now you can open the door!";
         });
 
-        let doorzichtigeKnop = document.querySelector("#doorzichtigeKnop");
+        let transparentButton = document.querySelector("#transparentButton");
 
-        doorzichtigeKnop.addEventListener('click', () => {
+        transparentButton.addEventListener('click', () => {
 
             if (clickKey) {
                 keySound2.play();
@@ -1232,6 +1232,9 @@
                 lastTips[0].classList.add("tip");
             }
         });
+
+
+        /* Section 13 (Game over)*/
 
         startAgain.addEventListener("click", () => {
             section13.classList.add("disappeared");
