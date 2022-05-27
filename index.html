@@ -20,7 +20,7 @@
     <div id="container">
 
         <!-- enter game -->
-        <section id="section1">
+        <section id="section1" class="disappeared">
             <img src="img/6_generated.jpg" alt="" width="660">
             <div class="button">START</div>
         </section>
@@ -326,13 +326,14 @@
             </div>
         </section>
 
-        <section id="section10-2" class="disappeared">
+        <section id="section10-2">
             <div class="room1" class="sections">
                 <img src="img/vecteezy_grid-room-in-perspective-vector-illustration-in-3d-style_6471587.jpg" alt="virtual reality room" width="960px" height="540px">
                 <div class="things">
                     <h3 class="tip">Ups! The folder is empty.</h3>
                     <img src="img/window.png" alt="window" class="window">
                     <div class="exitButton3">X</div>
+                    <img src="img/battery3.png" alt="battery" class="battery">
                 </div>
             </div>
 
@@ -526,6 +527,7 @@
         let music4 = new Audio('sounds/music4.mp3');
         let keySound1 = new Audio('sounds/mixkit-keys-moving-1558.wav');
         let keySound2 = new Audio('sounds/mixkit-door-key-in-door-lock-2842.wav');
+        let lockedDoor = new Audio('sounds/12739__leady__locked-door.wav');
 
         /* Section 3 (Things in the room) */
         let things = document.querySelector("#things");
@@ -1222,12 +1224,11 @@
             lastTips[0].innerHTML = "Now you can open the door!";
         });
 
-        doorzichtigeKnop = document.querySelector("#doorzichtigeKnop");
+        let doorzichtigeKnop = document.querySelector("#doorzichtigeKnop");
 
-        doorzichtigeKnop.addEventListener('click', togeelGevonden);
+        doorzichtigeKnop.addEventListener('click', () => {
 
-        if (clickKey) {
-            function togeelGevonden() {
+            if (clickKey) {
                 keySound2.play();
                 section12.classList.add("disappeared");
                 section12_1.classList.remove("disappeared");
@@ -1244,12 +1245,13 @@
                         section13.classList.remove("disappeared");
                     }
                 }
-            }
-        } else {
-            lastTips[1].innerHTML = "Find the key first."
-            lastTips[1].classList.add("tip");
-        }
 
+            } else {
+                lockedDoor.play();
+                lastTips[0].innerHTML = "Find the key first."
+                lastTips[0].classList.add("tip");
+            }
+        });
 
         startAgain.addEventListener("click", () => {
             section13.classList.add("disappeared");
