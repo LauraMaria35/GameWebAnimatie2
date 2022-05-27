@@ -1400,11 +1400,22 @@ h4:hover {
 
 #startAgain {
     margin-top: 240px;
-    margin-left: 385px;
+    margin-left: 285px;
     transition: 0.1s;
 }
 
 #startAgain:hover {
     transform: scale(0.8);
+    transition: 0.1s;
+}
+
+#exitGame {
+    margin-top: -157px;
+    margin-left: 565px;
+    transition: 0.1s;
+}
+
+#exitGame:hover {
+    transform: scale(0.9);
     transition: 0.1s;
 }

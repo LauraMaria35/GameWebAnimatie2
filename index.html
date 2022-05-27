@@ -472,7 +472,7 @@
             <img src="img/80_generated.jpg" alt="" width="660">
             <img src="img/trophy1.png" alt="trophy" id="endTrophy" width="140">
             <img src="img/startAgain.png" alt="start" id="startAgain">
-
+            <img src="img/ExitGame.png" alt="exit" id="exitGame">
         </section>
 
     </div>
@@ -616,6 +616,7 @@
 
         /* Section 13 */
         let startAgain = document.querySelector("#startAgain");
+        let exitGame = document.querySelector("#exitGame")
 
         /* Section 1 -> Section 2 */
         button.addEventListener('click', () => {
@@ -769,6 +770,7 @@
         games.addEventListener("click", () => {
             section4.classList.add("disappeared");
             section5.classList.remove("disappeared");
+
         });
 
         /* Section 5 -> Section 6 (Instructions for Meerkats Game) */
@@ -927,6 +929,7 @@
                     inventory.classList.remove("disappeared");
                 }, delayInMilliseconds);
             } else {
+
                 section4.classList.add("disappeared");
                 music2.pause();
                 music1.play();
@@ -961,6 +964,8 @@
                     inventory.classList.remove("disappeared");
                 }, delayInMilliseconds);
             }
+
+
         });
 
         exitComputer2.addEventListener('click', () => {
@@ -991,6 +996,7 @@
             section8.classList.add("disappeared");
             section8_1.classList.remove("disappeared");
 
+
             let chickAantal = 0;
             for (let i = 0; i < chicken.length; i++) {
 
@@ -1010,6 +1016,7 @@
                         chicks.style.visibility = "hidden";
                         counter1.innerHTML = 0;
                     }
+
                 }
             }
 
@@ -1132,6 +1139,11 @@
             section12.classList.add("disappeared");
         })
 
+        let clickPillow1 = false;
+        let clickPillow2 = false;
+        let clickCDs = false;
+        let clickBlanket = false;
+        let clickKey = false;
         let placePillow1;
         let placePillow2;
         let placeCDs;
@@ -1150,6 +1162,7 @@
             lastInventory_items[placePillow1].innerHTML = `<img src="img/pillow1.png" alt="pillow" width="56px">`;
             lastInventory_items[placePillow1].setAttribute("data-tool", "pillow1");
             pillow1[1].classList.add("disappeared");
+            clickPillow1 = true;
             lastTips[0].innerHTML = "Keep searching!";
 
         });
@@ -1165,6 +1178,7 @@
             lastInventory_items[placePillow2].innerHTML = `<img src="img/pillow2.png" alt="pillow" width="56px">`;
             lastInventory_items[placePillow2].setAttribute("data-tool", "pillow2");
             pillow2[1].classList.add("disappeared");
+            clickPillow2 = true;
             lastTips[0].innerHTML = "You are getting close!";
 
         });
@@ -1180,6 +1194,7 @@
             lastInventory_items[placeCDs].innerHTML = `<img src="img/cds.png" alt="cds" width="56px">`;
             lastInventory_items[placeCDs].setAttribute("data-tool", "cds");
             cds[1].classList.add("disappeared");
+            clickCDs = true;
             lastTips[0].innerHTML = "Keep searching!";
 
         });
@@ -1195,12 +1210,14 @@
             lastInventory_items[placeBlanket].innerHTML = `<img src="img/blanket.png" alt="cds" width="56px">`;
             lastInventory_items[placeBlanket].setAttribute("data-tool", "blanket");
             blanket.classList.add("disappeared");
+            clickBlanket = true;
             lastTips[0].innerHTML = "Nice!";
         });
 
         key.addEventListener("click", () => {
             section12.classList.add("show-key");
             key.classList.add("disappeared");
+            clickKey = true;
             keySound1.play();
             lastTips[0].innerHTML = "Now you can open the door!";
         });
@@ -1231,6 +1248,12 @@
         startAgain.addEventListener("click", () => {
             section13.classList.add("disappeared");
             section1.classList.remove("disappeared");
+            music1.pause();
+        });
+
+        exitGame.addEventListener("click", () => {
+            section13.classList.add("disappeared");
+            music1.pause();
         });
     </script>
 </body>
