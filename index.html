@@ -370,7 +370,7 @@
 
                 <div class="things">
                     <img src="img/battery2.png" alt="" class="battery1">
-                    <h3 class="tip"></h3>
+                    <h3 class="tipChat"></h3>
                     <img src="img/window.png" alt="window" class="window1">
                     <div class="exitButton1">X</div>
                     <div id="chat">
@@ -597,6 +597,7 @@
         /* Section 11-1 */
         let mySentence = document.querySelectorAll(".mySentence");
         let momSentence = document.querySelectorAll(".momSentence");
+        let tipChat = document.querySelector(".tipChat");
         let exitButton1 = document.querySelector(".exitButton1");
 
         /* Section 12 */
@@ -799,7 +800,7 @@
                     clearInterval(myInterval);
                     section7.classList.add("disappeared");
                     section7_1.classList.remove("disappeared");
-                    firstGame1.innerHTML = 'You only accumulated ' + count + 'points. You lose.';
+                    firstGame1.innerHTML = 'You only accumulated ' + count + ' points. You lose.';
                 } else {}
 
                 tryAgain.addEventListener('click', again);
@@ -1101,7 +1102,11 @@
                     momSentence[i].style.visibility = "hidden";
                 });
             }
-
+            let delayInMilliseconds = 40000;
+            setTimeout(function() {
+                tipChat.style.visibility = "visible";
+                tipChat.innerHTML = "Go find the key in the room";
+            }, delayInMilliseconds);
         });
 
         exitButton2.addEventListener('click', () => {
@@ -1126,6 +1131,7 @@
             section12.classList.add("disappeared");
         })
 
+        /* Section 12 */
         let clickPillow1 = false;
         let clickPillow2 = false;
         let clickCDs = false;
@@ -1218,20 +1224,16 @@
                 section12.classList.add("disappeared");
                 section12_1.classList.remove("disappeared");
                 lastTips[1].classList.add("tip");
-                music1.pause();
-                cheering.play();
 
-                const myInterval = setInterval(myTimer, 1000);
-                let seconds = 0;
+                let delayInMilliseconds = 3000;
+                setTimeout(function() {
+                    music1.pause();
+                    section12_1.classList.add("disappeared");
+                    cheering.play();
+                    section13.classList.remove("disappeared");
 
-                function myTimer() {
-                    seconds++;
-                    if (seconds == 3) {
-                        clearInterval(myInterval);
-                        section12_1.classList.add("disappeared");
-                        section13.classList.remove("disappeared");
-                    }
-                }
+                }, delayInMilliseconds);
+
 
             } else {
                 lockedDoor.play();

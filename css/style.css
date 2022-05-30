@@ -1215,6 +1215,12 @@ h4:hover {
     left: 169px;
 }
 
+.tipChat {
+    padding-top: 25px;
+    font-size: 24px;
+    visibility: hidden;
+}
+
 .exitButton1 {
     position: absolute;
     padding: 6px;
