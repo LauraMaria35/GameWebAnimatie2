@@ -119,8 +119,8 @@
                 <img src="img/suricate.png" height="340">
 
                 <br>
-                <h2 class="firstGame">When you click on a meerkat, you get one point, two points, or five points, depending on the meerkat caught. It is up to you to find out which meerkat gives you the most points. If you manage to score at least 100 points in 1 minute, you
-                    win the game. If you run out of time, you lose. Good luck catching as many meerkats in as short time as possible!</h2>
+                <h2 class="firstGame">When you click on a meerkat, you get one point, two points, or five points, depending on the meerkat caught. It is up to you to find out which meerkat gives you the most points. If you manage to score 100 points in 1 minute, you win the
+                    game. If you run out of time, you lose. Good luck catching as many meerkats in as short time as possible!</h2>
 
                 <div class="enterGame1">START</div>
 
@@ -788,56 +788,56 @@
                 seconds++;
 
                 klok.innerHTML = `Time: ${seconds}s`;
-                if (seconds == 61) {
+                if (count == 100 && seconds <= 60) {
                     clearInterval(myInterval);
                     section7.classList.add("disappeared");
+                    section7_2.classList.remove("disappeared");
+                    firstGame2.innerHTML = 'Congratulations! You accumulated 100 points in ' + seconds + ' seconds. You won! You receive a clue that will help you find the key. The clue is: <span>bed</span>.';
 
-                    if (count >= 100) {
-                        section7_2.classList.remove("disappeared");
-                        firstGame2.innerHTML = 'Congratulations! You accumulated ' + count + ' points. You won! You receive a clue that will help you find the key. The clue is: <span>bed</span>.';
+                } else if (count < 100 && seconds == 60) {
+                    clearInterval(myInterval);
+                    section7.classList.add("disappeared");
+                    section7_1.classList.remove("disappeared");
+                    firstGame1.innerHTML = 'You only accumulated ' + count + 'points. You lose.';
+                } else {}
 
-                    } else {
-                        section7_1.classList.remove("disappeared");
-                        firstGame1.innerHTML = 'You only accumulated ' + count + ' points. You lose.';
-                    }
+                tryAgain.addEventListener('click', again);
+                leaveGameLost.addEventListener('click', leaveIfLost);
+                playAgain.addEventListener("click", playAgain1);
+                leaveGameWin.addEventListener('click', leaveIfWin);
 
-                    tryAgain.addEventListener('click', again);
-                    leaveGameLost.addEventListener('click', leaveIfLost);
-                    playAgain.addEventListener("click", playAgain1);
-                    leaveGameWin.addEventListener('click', leaveIfWin);
+                function again() {
+                    section7_1.classList.add("disappeared");
+                    section6.classList.remove("disappeared");
+                    count = 0;
+                    counterDisplayElem.innerHTML = count;
+                    counterDisplayElem.innerHTML = "Total: " + count + " points";
+                }
 
-                    function again() {
-                        section7_1.classList.add("disappeared");
-                        section6.classList.remove("disappeared");
-                        count = 0;
-                        counterDisplayElem.innerHTML = count;
-                        counterDisplayElem.innerHTML = "Total: " + count + " points";
-                    }
+                function leaveIfLost() {
+                    section7_1.classList.add("disappeared");
+                    section5.classList.remove("disappeared");
+                    music3.pause();
+                    music2.play();
+                }
 
-                    function leaveIfLost() {
-                        section7_1.classList.add("disappeared");
-                        section5.classList.remove("disappeared");
-                        music3.pause();
-                        music2.play();
-                    }
+                function playAgain1() {
+                    section7_2.classList.add("disappeared");
+                    section6.classList.remove("disappeared");
+                    count = 0;
+                    counterDisplayElem.innerHTML = count;
+                    counterDisplayElem.innerHTML = "Total: " + count + " points";
+                }
 
-                    function playAgain1() {
-                        section7_2.classList.add("disappeared");
-                        section6.classList.remove("disappeared");
-                        count = 0;
-                        counterDisplayElem.innerHTML = count;
-                        counterDisplayElem.innerHTML = "Total: " + count + " points";
-                    }
-
-                    function leaveIfWin() {
-                        section7_2.classList.add("disappeared");
-                        section5.classList.remove("disappeared");
-                        game1played = true;
-                        music3.pause();
-                        music2.play();
-                    }
+                function leaveIfWin() {
+                    section7_2.classList.add("disappeared");
+                    section5.classList.remove("disappeared");
+                    game1played = true;
+                    music3.pause();
+                    music2.play();
                 }
             }
+
 
             for (let i = 0; i < meerkat.length; i++) {
                 meerkat[0].style.animationDelay = `${Math.random() * 5}s`;

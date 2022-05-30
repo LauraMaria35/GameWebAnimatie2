@@ -319,6 +319,7 @@ span {
 .exit:hover {
     transform: scale(0.4);
     transition: .2s;
+    cursor: pointer;
 }
 
 .gamesFolder {
@@ -331,6 +332,7 @@ span {
 .gamesFolder:hover {
     transform: scale(0.7);
     transition: .2s;
+    cursor: pointer;
 }
 
 .folder0 {
@@ -382,6 +384,7 @@ span {
 .exitButton:hover {
     transform: scale(0.9);
     transition: .1s;
+    cursor: pointer;
 }
 
 .titleGame1 {
@@ -410,6 +413,7 @@ span {
 .game1:hover {
     transform: scale3d(1.2, 0.9, 1.4);
     transition: .2s;
+    cursor: pointer;
 }
 
 .game2 {
@@ -422,6 +426,7 @@ span {
 .game2:hover {
     transform: scale3d(1.2, 0.9, 1.4);
     transition: .2s;
+    cursor: pointer;
 }
 
 
@@ -791,7 +796,7 @@ h4:hover {
 }
 
 #chick5 {
-    top: -70px;
+    top: -75px;
     left: 418px;
 }
 
@@ -997,6 +1002,7 @@ h4:hover {
 .leaveGame:hover {
     background-color: #f5129e;
     color: black;
+    cursor: pointer;
 }
 
 
@@ -1024,6 +1030,7 @@ h4:hover {
 .chat:hover {
     transform: scale(0.7);
     transition: .2s;
+    cursor: pointer;
 }
 
 .exit1 {
@@ -1035,6 +1042,7 @@ h4:hover {
 .exit1:hover {
     transform: scale(0.4);
     transition: .2s;
+    cursor: pointer;
 }
 
 
@@ -1050,6 +1058,7 @@ h4:hover {
 .folder1:hover {
     transform: scale(0.7);
     transition: .2s;
+    cursor: pointer;
 }
 
 .exit2 {
@@ -1061,6 +1070,7 @@ h4:hover {
 .exit2:hover {
     transform: scale(0.4);
     transition: .2s;
+    cursor: pointer;
 }
 
 
@@ -1082,6 +1092,7 @@ h4:hover {
 .exitButton3:hover {
     transform: scale(0.9);
     transition: .1s;
+    cursor: pointer;
 }
 
 
@@ -1191,6 +1202,7 @@ h4:hover {
 .exitButton2:hover {
     transform: scale(0.9);
     transition: .1s;
+    cursor: pointer;
 }
 
 
@@ -1220,6 +1232,7 @@ h4:hover {
 .exitButton1:hover {
     transform: scale(0.9);
     transition: .1s;
+    cursor: pointer;
 }
 
 #chat {
@@ -1413,6 +1426,7 @@ h4:hover {
 #startAgain:hover {
     transform: scale(0.8);
     transition: 0.1s;
+    cursor: pointer;
 }
 
 #exitGame {
@@ -1424,4 +1438,5 @@ h4:hover {
 #exitGame:hover {
     transform: scale(0.9);
     transition: 0.1s;
+    cursor: pointer;
 }
