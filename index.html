@@ -513,6 +513,7 @@
         let keySound1 = new Audio('sounds/mixkit-keys-moving-1558.wav');
         let keySound2 = new Audio('sounds/mixkit-door-key-in-door-lock-2842.wav');
         let lockedDoor = new Audio('sounds/12739__leady__locked-door.wav');
+        let cheering = new Audio('sounds/mixkit-cheering-crowd-loud-whistle-610.wav');
         music1.volume = 0.1;
         music2.volume = 0.1;
         music3.volume = 0.1;
@@ -1217,6 +1218,8 @@
                 section12.classList.add("disappeared");
                 section12_1.classList.remove("disappeared");
                 lastTips[1].classList.add("tip");
+                music1.pause();
+                cheering.play();
 
                 const myInterval = setInterval(myTimer, 1000);
                 let seconds = 0;
@@ -1242,13 +1245,11 @@
         startAgain.addEventListener("click", () => {
             section13.classList.add("disappeared");
             section1.classList.remove("disappeared");
-            music1.pause();
             window.location.href = "index.html";
         });
 
         exitGame.addEventListener("click", () => {
             section13.classList.add("disappeared");
-            music1.pause();
             window.location.href = "https://lauraciocalau.com";
         });
     </script>
