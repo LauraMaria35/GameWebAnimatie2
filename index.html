@@ -912,7 +912,7 @@
         /* Exit virtual world. */
         exitComputer.addEventListener('click', () => {
 
-            if (game1played && game2played) {
+            if (game1played && game2played && chatted) {
                 section4.classList.add("disappeared");
                 music2.pause();
                 music1.play();
@@ -939,7 +939,7 @@
             section10.classList.add("disappeared");
             music2.pause();
             music1.play();
-            if (game1played && game2played) {
+            if (game1played && game2played && chatted) {
                 let delayInMilliseconds = 500;
                 setTimeout(function() {
                     section12.classList.remove("disappeared");
@@ -949,7 +949,7 @@
             } else {
                 let delayInMilliseconds = 500;
                 setTimeout(function() {
-                    section3.classList.remove("disappeared");
+                    section10.classList.remove("disappeared");
                     music1.play();
                     inventory.classList.remove("disappeared");
                 }, delayInMilliseconds);
@@ -957,16 +957,20 @@
         });
 
         exitComputer2.addEventListener('click', () => {
-            section10_1.classList.add("disappeared");
-            music2.pause();
-            music1.play();
-            let delayInMilliseconds = 500;
-            setTimeout(function() {
-                section12.classList.remove("disappeared");
+            if (chatted) {
+                section10_1.classList.add("disappeared");
+                music2.pause();
                 music1.play();
-                inventory.classList.remove("disappeared");
-            }, delayInMilliseconds);
-
+                let delayInMilliseconds = 500;
+                setTimeout(function() {
+                    section12.classList.remove("disappeared");
+                    music1.play();
+                    inventory.classList.remove("disappeared");
+                }, delayInMilliseconds);
+            } else {
+                section10_1.classList.add("disappeared");
+                section10.classList.remove("disappeared");
+            }
         });
 
         /* Search Game (Section 5 -> Section 8) */
@@ -1107,6 +1111,7 @@
             setTimeout(function() {
                 tipChat.style.visibility = "visible";
                 tipChat.innerHTML = "Go find the key in the room";
+                chatted = true;
             }, delayInMilliseconds);
         });
 
