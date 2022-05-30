@@ -790,7 +790,7 @@
                 seconds++;
 
                 klok.innerHTML = `Time: ${seconds}s`;
-                if (count == 100 && seconds <= 60) {
+                if (count >= 100 && seconds <= 60) {
                     clearInterval(myInterval);
                     section7.classList.add("disappeared");
                     section7_2.classList.remove("disappeared");
