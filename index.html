@@ -1082,12 +1082,6 @@
                     mySentence[i].style.visibility = "visible";
 
                 }
-                exitButton1.addEventListener('click', () => {
-                    section11_1.classList.add("disappeared");
-                    section10_1.classList.remove("disappeared");
-                    mySentence[i].style.animation = "";
-                    mySentence[i].style.visibility = "hidden";
-                });
             }
             for (let i = 0; i < momSentence.length; i++) {
 
@@ -1099,26 +1093,47 @@
                 if (momSentence[i].style.top <= 100 + "px") {
                     momSentence[i].style.visibility = "visible";
                 }
-                exitButton1.addEventListener('click', () => {
+
+            }
+
+            exitButton1.addEventListener('click', () => {
+                if (chatted) {
                     section11_1.classList.add("disappeared");
                     section10_1.classList.remove("disappeared");
-                    momSentence[i].style.animation = "";
-                    momSentence[i].style.visibility = "hidden";
+
+                    for (let i = 0; i < momSentence.length; i++) {
+                        momSentence[i].style.animation = "";
+                        momSentence[i].style.visibility = "hidden";
+                        mySentence[i].style.animation = "";
+                        mySentence[i].style.visibility = "hidden";
+                    }
                     tipChat.style.visibility = "hidden";
-                });
-            }
+
+                } else {
+                    tipChat.style.visibility = "hidden";
+                    section11_1.classList.add("disappeared");
+                    section10.classList.remove("disappeared");
+                }
+            });
+
             let delayInMilliseconds = 40000;
-            setTimeout(function() {
+
+            momSentence[3].addEventListener("animationend", () => {
+                console.log("test");
                 tipChat.style.visibility = "visible";
                 tipChat.innerHTML = "Go find the key in the room";
                 chatted = true;
-            }, delayInMilliseconds);
+            })
         });
 
         exitButton2.addEventListener('click', () => {
-            section11.classList.add("disappeared");
-            section10_1.classList.remove("disappeared");
-
+            if (chatted) {
+                section11.classList.add("disappeared");
+                section10_1.classList.remove("disappeared");
+            } else {
+                section11.classList.add("disappeared");
+                section10.classList.remove("disappeared");
+            }
         });
 
         exitButton3.addEventListener('click', () => {
